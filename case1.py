@@ -12,6 +12,7 @@ omega = 0.2
 lamb = 10
 k = omega**2
 alpha = k**0.25
+print(alpha, lamb, k)
 
 
 def initial_condition(x: np.ndarray, alpha=alpha, lamb=lamb) -> np.ndarray:
@@ -39,17 +40,13 @@ def analytic_solution(x, t, alpha=alpha, lamb=lamb, k=k):
 
 
 # Only time is missing
-t_points = np.linspace(0, 10, 1000)
+# We need to observe 10 periods T = 2pi/omega
+T = 2*np.pi/omega
+t_points = np.linspace(0, T, 1000)
 
 solver = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, N)
 solution = solver.solve()
+analytic = analytic_solution(solver.x, 0, lamb=lamb, k=omega**2)
 
 # Plot the solution
-fig, ax = plt.subplots()
-ax.plot(solver.x, np.abs(solution[0])**2, label="Numerical")
-ax.plot(solver.x, np.abs(analytic_solution(solver.x, 0, lamb=lamb, k=omega**2))**2, label="Analytic")
-ax.set_xlabel("x")
-ax.set_ylabel(r"$|\psi(x,t)|^2$")
-ax.set_title("t = 0")
-ax.legend()
-plt.show()
+solver.plot_Basic(0)
