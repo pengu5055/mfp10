@@ -33,7 +33,7 @@ class FDMSolver():
         self.N = N
         self.x = np.linspace(x_range[0], x_range[1], N)
         self.dx = self.x[1] - self.x[0]
-        self.dt = self.t_points[1] - self.t_points[0]
+        self.dt = self.t[1] - self.t[0]
 
     def solve(self) -> np.ndarray:
         """
