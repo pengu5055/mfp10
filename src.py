@@ -48,6 +48,7 @@ class FDMSolver():
         self.solution[0] = self.initial_condition(self.x)
         
         # Set the boundary conditions
+        # I think this might be a potential error. It should be 0 across all indices
         self.solution[:, 0] = 0
         self.solution[:, -1] = 0
 
@@ -74,9 +75,10 @@ class FDMSolver():
     
     def plot_Animation(self, x: Iterable[float] | None = None, 
                        solution: Iterable[float] | None = None,
-                       color: str = "black",
+                       color: str = "#f07ab9",
+                       color2: str = "#faed8c",
                        saveVideo: bool = False, 
-                       videoName: str = "animation.mp4", 
+                       filename: str = "animation.mp4", 
                        fps: int = 20,
                     ):
         """
@@ -92,7 +94,7 @@ class FDMSolver():
                 "analytical" or "numerical".
             color: The color of the plotted solution.
             saveVideo: Whether or not to save the animation as a video.
-            videoName: The name of the video to save.
+            filename: The name of the video to save.
             fps: The frames per second of the video.
         
         Return:
@@ -108,23 +110,41 @@ class FDMSolver():
         def update(frame):
             line.set_ydata(solution[frame])
             line.set_color(color)
-            L.get_texts()[0].set_text(f"t = {frame/fps:.2f} s")
+            line2.set_ydata(np.abs(self.analytic_solution(x, frame*self.dt))**2)
+            line2.set_color(color2)
+            L.get_texts()[0].set_text(f"t = {frame*self.dt:.2f} s")
             return line,
 
-        fig, ax = plt.subplots()
+        plt.rcParams.update({'font.family': 'Verdana'})
+        fig, ax = plt.subplots(facecolor="#4d4c4c")
+
         line, = ax.plot(x, solution[0], label="t = 0 s", c=color)
+        line2, = ax.plot(x, np.abs(self.analytic_solution(x, 0))**2, label="Analytic t = 0 s", c=color2, ls="--")
+        line3, = ax.plot(x, self.V, label="Potential", c="#d4ed82", ls=":")
+
         ax.set_xlabel("x")
         ax.set_ylabel("T")
-        # ax.set_ylim(-1.5, 1.5)
-        # ax.set_xlim(0, 1)
-        plt.suptitle("Solution of the heat equation")
+        plt.suptitle("Schrodinger's equation - Case 1", color="#dedede")
         L = plt.legend()
+        ax.set_ylim(-0.1, 0.5)
 
-        ani = FuncAnimation(fig, update, frames=range(len(self.t_points)), blit=False, interval=1000/fps)
+        ax.set_facecolor("#bababa")
+        plt.grid(c="#d1d1d1", alpha=0.5)
+        ax.spines['bottom'].set_color("#dedede")
+        ax.spines['top'].set_color("#dedede")
+        ax.spines['right'].set_color("#dedede")
+        ax.spines['left'].set_color("#dedede")
+        ax.xaxis.label.set_color("#dedede")
+        ax.yaxis.label.set_color("#dedede")
+        ax.tick_params(axis="x", colors="#dedede")
+        ax.tick_params(axis="y", colors="#dedede")
+        ax.axhline(0, linestyle="--", color="#dedede")
+
+        ani = FuncAnimation(fig, update, frames=range(len(self.t)), blit=False, interval=1000/fps)
         plt.rcParams['animation.ffmpeg_path'] ='C:\\Media\\ffmpeg\\bin\\ffmpeg.exe' 
         if saveVideo:
             writervideo = FFMpegWriter(fps=fps)
-            ani.save(videoName, writer=writervideo)
+            ani.save(filename, writer=writervideo)
 
         plt.show()
 

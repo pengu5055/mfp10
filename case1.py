@@ -12,7 +12,6 @@ omega = 0.2
 lamb = 10
 k = omega**2
 alpha = k**0.25
-print(alpha, lamb, k)
 
 
 def initial_condition(x: np.ndarray, alpha=alpha, lamb=lamb) -> np.ndarray:
@@ -49,4 +48,4 @@ solution = solver.solve()
 analytic = analytic_solution(solver.x, 0, lamb=lamb, k=omega**2)
 
 # Plot the solution
-solver.plot_Basic(0)
+solver.plot_Animation(saveVideo=True, filename="case1.mp4", fps=120)
