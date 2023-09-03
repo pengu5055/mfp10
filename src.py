@@ -13,6 +13,8 @@ PDEs.
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, FFMpegWriter
+import matplotlib as mpl
+import cmasher as cmr
 from typing import Callable, Tuple, Iterable
 
 
@@ -108,7 +110,7 @@ class FDMSolver():
                 print("Call one of solving methods before trying to plot or supply data as function parameters!")
 
         def update(frame):
-            line.set_ydata(solution[frame])
+            line.set_ydata(np.abs(solution[frame])**2)
             line.set_color(color)
             line2.set_ydata(np.abs(self.analytic_solution(x, frame*self.dt))**2)
             line2.set_color(color2)
@@ -118,7 +120,7 @@ class FDMSolver():
         plt.rcParams.update({'font.family': 'Verdana'})
         fig, ax = plt.subplots(facecolor="#4d4c4c")
 
-        line, = ax.plot(x, solution[0], label="t = 0 s", c=color)
+        line, = ax.plot(x, np.abs(solution[0])**2, label="t = 0 s", c=color)
         line2, = ax.plot(x, np.abs(self.analytic_solution(x, 0))**2, label="Analytic t = 0 s", c=color2, ls="--")
         line3, = ax.plot(x, self.V, label="Potential", c="#d4ed82", ls=":")
 
@@ -127,6 +129,7 @@ class FDMSolver():
         plt.suptitle("Schrodinger's equation - Case 1", color="#dedede")
         L = plt.legend()
         ax.set_ylim(-0.1, 0.5)
+        ax.set_xlim(-15, 15)
 
         ax.set_facecolor("#bababa")
         plt.grid(c="#d1d1d1", alpha=0.5)
@@ -172,3 +175,50 @@ class FDMSolver():
 
         return np.sqrt(alpha/ np.sqrt(np.pi)) * np.exp(-0.5*(xi - xl*np.cos(omega*t))**2 -
                 -1j * (omega*t/2 + xi*xl*np.sin(omega*t) - 0.25 * xl**2 * np.sin(2*omega*t))) 
+    
+    def plot_Heatmap(self, method: str = "analytical"):
+        """
+        Plot the solution as a heatmap.
+        """
+        plt.rcParams.update({'font.family': 'Verdana'})
+        fig, ax = plt.subplots(facecolor="#4d4c4c")
+        if method == "analytical":
+            data = np.copy(self.solution_a)
+            data = np.flip(data, axis=0)
+        elif method == "numerical":
+            data = np.copy(self.solution)
+            data = np.flip(data, axis=0)
+        else:
+            raise ValueError("Method must be either 'analytical' or 'numerical'!")
+        norm = mpl.colors.Normalize(vmin=np.min(data), vmax=np.max(data))
+        # norm = mpl.colors.Normalize(vmin=0, vmax=1)   
+        plt.imshow(data, cmap=cmr.redshift, aspect="auto", norm=norm,# vmin=np.min(data), vmax=np.max(data),
+                   extent=[self.x_range[0], self.x_range[1], self.t_points[0], self.t_points[-1]])
+
+        x_ticks = np.linspace(self.x_range[0],self.x_range[1], 10)
+        plt.xticks(x_ticks)
+        y_ticks = np.linspace(self.t_points[0], self.t_points[-1], 10)
+        plt.yticks(y_ticks)
+
+        plt.xlabel(r"$x\>[arb. units]$")
+        plt.ylabel(r"$t\>[arb. units]$")
+        plt.suptitle("Heatmap of the solution solved by Analytical Spectral method", color="#dedede")
+        
+        scalar_Mappable = plt.cm.ScalarMappable(norm=norm, cmap=cmr.redshift)
+        cb = plt.colorbar(scalar_Mappable, ax=ax, label=r"$T\>[arb. units]$",
+                      orientation="vertical")
+        cb.set_label(r"$T\>[arb. units]$", color="#dedede")
+        cb.ax.xaxis.set_tick_params(color="#dedede")
+        cb.ax.yaxis.set_tick_params(color="#dedede")
+        cb.ax.tick_params(axis="x", colors="#dedede")
+        cb.ax.tick_params(axis="y", colors="#dedede")
+        ax.spines['bottom'].set_color("#dedede")
+        ax.spines['top'].set_color("#dedede")
+        ax.spines['right'].set_color("#dedede")
+        ax.spines['left'].set_color("#dedede")
+        ax.xaxis.label.set_color("#dedede")
+        ax.yaxis.label.set_color("#dedede")
+        ax.tick_params(axis="x", colors="#dedede")
+        ax.tick_params(axis="y", colors="#dedede")
+        plt.subplots_adjust(right=.98)
+        plt.show()
