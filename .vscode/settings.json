@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "FDMSolver",
-        "case1"
+        "case1",
+        "case2"
     ]
 }
