@@ -4,10 +4,10 @@ This the second case of the project where we study a gaussian wavepacket.
 """
 import numpy as np
 import matplotlib.pyplot as plt
-from src import FDMSolver
+from src2 import FDMSolver
 
 # Set some constants as far as this case goes
-N = 200
+N = 400
 x_range = (-0.5, 1.5)
 sigma_0 = 1/20
 k_0 = 50*np.pi
@@ -20,7 +20,7 @@ def initial_condition(x: np.ndarray, sigma_0=sigma_0, k_0=k_0, lamb=lamb) -> np.
     """
     return (2*np.pi*sigma_0**2)**(-1/4) * np.exp(1j*k_0*(x-lamb) - (x-lamb)**2/(4*sigma_0**2))
 
-def no_potential(x, k = k):
+def no_potential(x):
     """
     There is no potential in this case.
     """
@@ -30,10 +30,11 @@ def analytic_solution(x, t, sigma_0=sigma_0, k_0 = k_0, lamb=lamb):
     """
     The analytic solution for the wavefunction.
     """
+    t = np.array(t)
     return (2*np.pi*sigma_0**2)**(-1/4) / np.sqrt(1 + 1j*t/(2*sigma_0**2)) * \
             np.exp((-(x-lamb)**2 / (4*sigma_0**2) + 1j*k_0*(x-lamb) - 1j * k_0**2 * t/2) /(1 + 1j*t/(2*sigma_0**2)))
 
-
+# TODO: CHANGE PLOT TITLES FOR HEATMAP! AND ANIMATION!
 # Only time is missing
 # We need to observe 10 periods T = 2pi/omega
 periods = 11
