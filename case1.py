@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from src import FDMSolver
 
 # Set some constants as far as this case goes
-N = 300
+N = 200
 x_range = (-40,40)
 omega = 0.2
 lamb = 10
@@ -40,12 +40,65 @@ def analytic_solution(x, t, alpha=alpha, lamb=lamb, k=k):
 
 # Only time is missing
 # We need to observe 10 periods T = 2pi/omega
-T = 2*np.pi/omega
-t_points = np.linspace(0, T, 1000)
+periods = 11
+T = periods * 2*np.pi/omega
+M = periods * 1000
+t_points = np.linspace(0, T, M)
 
 solver = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, N)
 solution = solver.solve()
 analytic = analytic_solution(solver.x, 0, lamb=lamb, k=omega**2)
 
 # Plot the solution
-solver.plot_Animation(saveVideo=True, filename="case1.mp4", fps=120)
+# solver.plot_Animation(saveVideo=False, filename="case1b.mp4", fps=120)
+# solver.plot_Heatmap()
+
+# Instantiate another solver with a different N
+solver2 = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, 700)
+solution2 = solver2.solve()
+
+# Plot the difference between the two solutions
+fig, ax = plt.subplots(facecolor="#4d4c4c")
+plt.rcParams.update({'font.family': 'Verdana'})
+plt.plot(solver.t,  np.mean(np.abs(solution2)**2, axis=1) - np.mean(np.abs(solution)**2, axis=1), color="#fa84b3")
+plt.xlabel("t")
+plt.ylabel(r"$|\psi_{N=700}|^2 - |\psi_{N=200}|^2$")
+plt.title("Difference between the two solutions", color="#dedede")
+ax.spines['bottom'].set_color("#dedede")
+ax.spines['top'].set_color("#dedede")
+ax.spines['right'].set_color("#dedede")
+ax.spines['left'].set_color("#dedede")
+ax.xaxis.label.set_color("#dedede")
+ax.yaxis.label.set_color("#dedede")
+ax.tick_params(axis="x", colors="#dedede")
+ax.tick_params(axis="y", colors="#dedede")
+plt.grid(c="#d1d1d1", alpha=0.5)
+plt.show()
+
+# Plot the differemce between the two solutions and the analytic solution
+analytic1 = np.abs(solver.analytic_solution(np.mean(solver.x), solver.t))**2
+analytic2 = np.abs(solver2.analytic_solution(np.mean(solver2.x), solver2.t))**2
+print(f"Shape of analytic1: {analytic1.shape}")
+print(f"Shape of analytic2: {analytic2.shape}")
+avg_sol1 = np.mean(np.abs(solution)**2, axis=1)
+avg_sol2 = np.mean(np.abs(solution2)**2, axis=1)
+print(f"Shape of avg_sol: {avg_sol1.shape}")
+print(f"Shape of avg_sol2: {avg_sol2.shape}")
+
+fig, ax = plt.subplots(facecolor="#4d4c4c")
+plt.rcParams.update({'font.family': 'Verdana'})
+plt.plot(solver.t, avg_sol1 - analytic1, color="#fa84b3")
+plt.plot(solver2.t, avg_sol2 - analytic2, color="#daf589")
+plt.xlabel("t")
+plt.ylabel(r"$|\psi_{\mathrm{num}}|^2 - |\psi_{\mathrm{ana}}|^2$")
+plt.title("Difference between numeric and analytic solution", color="#dedede")
+ax.spines['bottom'].set_color("#dedede")
+ax.spines['top'].set_color("#dedede")
+ax.spines['right'].set_color("#dedede")
+ax.spines['left'].set_color("#dedede")
+ax.xaxis.label.set_color("#dedede")
+ax.yaxis.label.set_color("#dedede")
+ax.tick_params(axis="x", colors="#dedede")
+ax.tick_params(axis="y", colors="#dedede")
+plt.grid(c="#d1d1d1", alpha=0.5)
+plt.show()
