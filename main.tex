@@ -114,9 +114,49 @@ Razvoj stanja $\psi(x,\>t)$ v času $\psi(x,\>t + \Delta t)$ je opisan z pribli�
 \end{equation}
 
 Območje $x\in[a,\>b]$ diskretiziramo na krajevno mrežo z $N$ točkami $x_j = a + j\Delta x$, kjer je $\Delta x = (b-a)/(N-1)$.
-Časovni razvoj spremljamo ob časovni mreži z $M$ točkami $t_m = m\Delta t$, kjer je $\Delta t$ časovni korak.
+Časovni razvoj spremljamo ob časovni mreži z $M$ točkami $t_m = m\Delta t$, kjer je $\Delta t$ časovni korak. Vrednosti valovne
+funkcije in potenciala v mrežnih točkah ob času $t_m$ označimo z $\psi_j^m$ in $V_j$. Krajevni odvod izrazimo z 
+diferenco
 
+\begin{equation}
+    \Psi''(x) \approx \frac{\psi(x + \Delta x,\>t)-2\psi(x,\>t)+\psi(x-\Delta x,\>t)}{\Delta x^2} 
+    = \frac{\psi_{j+1}^m - 2\psi_j^m + \psi_{j-1}^m}{\Delta x^2}\>.
+    \label{krajevni_odvod}
+\end{equation}
 
+Te približke vstavimo v razvoj stanja \ref{razvoj} in razpišemo Hamiltonov operator, da dobimo sistem enačb
+
+\begin{multline}
+    \psi_j^{m+1} - i \frac{\Delta t}{4\Delta x^2}\left[\psi_{j+1}^{m+1} - 2\psi_j^{m+1} + \psi_{j-1}^{m+1}\right] + i \frac{\Delta t}{2} V_j \psi_j^{m+1} = \\
+    \psi_j^m + i \frac{\Delta t}{4\Delta x^2}\left[\psi_{j+1}^m - 2\psi_j^m + \psi_{j-1}^m\right] - i \frac{\Delta t}{2}V_j\psi_j^m\>.
+    \label{sistem}
+\end{multline}
+
+v notranjih točkah mreže, medtem ko na robu (pri $j\le 0$ in $j\ge N$) postavimo $\psi_j^{m} = 0$. Vrednosti valovne funkcije uredimo v 
+vektor $\Psi^m$ in sistem \ref{sistem} prepišemo v matrično obliko
+
+\begin{equation}
+    \mathbf{A}\Psi^{m+1} = \mathbf{A^*}\Psi^m\>,
+\end{equation}
+
+kjer je $\mathbf{A}$ tridiaonalna matrika z elementi
+
+\begin{equation}
+    b = 1 + i\frac{\Delta t}{2\Delta x^2}\>,\quad a = -\frac{b}{2}\>,\quad d_j = 1 + b + i\frac{\Delta t}{2}V_j\>.
+\end{equation}
+Torej je $\mathbf{A}$ oblike
+
+\begin{equation}
+    \mathbf{A} = \begin{bmatrix}
+        d_1 & a & 0 & \cdots & 0 \\
+        a & d_2 & a & \cdots & 0 \\
+        0 & a & d_3 & \cdots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \cdots & d_{N-1}
+    \end{bmatrix}\>.
+\end{equation}
+
+Kot smo napovedali, je to torej matrični sistem, ki ga moramo rešiti v vsakem časovnem koraku iterativno.
 
 \section{Naloga}
 
