@@ -114,19 +114,20 @@ class FDMSolver():
             line.set_color(color)
             line2.set_ydata(np.abs(self.analytic_solution(x, frame*self.dt))**2)
             line2.set_color(color2)
-            L.get_texts()[0].set_text(f"t = {frame*self.dt:.2f} s")
+            title.set_text(f"t = {frame*self.dt:.2f} s")
             return line,
 
         plt.rcParams.update({'font.family': 'Verdana'})
         fig, ax = plt.subplots(facecolor="#4d4c4c")
 
-        line, = ax.plot(x, np.abs(solution[0])**2, label="t = 0 s", c=color)
-        line2, = ax.plot(x, np.abs(self.analytic_solution(x, 0))**2, label="Analytic t = 0 s", c=color2, ls="--")
+        line, = ax.plot(x, np.abs(solution[0])**2, label="Numeric sol.", c=color)
+        line2, = ax.plot(x, np.abs(self.analytic_solution(x, 0))**2, label="Analytic sol.", c=color2, ls="--")
         line3, = ax.plot(x, self.V, label="Potential", c="#d4ed82", ls=":")
 
         ax.set_xlabel("x")
         ax.set_ylabel("T")
         plt.suptitle("Schrodinger's equation - Case 1", color="#dedede")
+        title = plt.title(f"t={0:.2f} s", color="#dedede")
         L = plt.legend()
         ax.set_ylim(-0.1, 0.5)
         ax.set_xlim(-15, 15)
@@ -200,7 +201,7 @@ class FDMSolver():
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
-        plt.suptitle("Heatmap of the solution solved by Analytical Spectral method", color="#dedede")
+        plt.suptitle("Heatmap of the solution solved by FDM - Harmonic Potential", color="#dedede")
         
         t_step = (self.t[-1] - self.t[0])/len(self.t)
 
