@@ -71,7 +71,51 @@
 \tableofcontents
 \newpage
 \section{Uvod}
-V prejšnji nalogi smo rekli, da obstajata v glavnem dva velik
+V prejšnji nalogi smo rekli, da obstajata v glavnem dva velika razreda za reševanje parcialnih diferencialnih
+enačb (PDE). To sta spektralne metode, ki smo jih raziskali v prejšnji nalogi in pa diferencialne metode, ki jih
+spoznamo tu. Diferencialne metode so v glavnem metode, ki rešujejo PDE tako, da jih diskretizirajo in jih
+pretvorijo v sistem linearnih enačb. Te metode so v glavnem zelo podobne kot metode za reševanje sistemov
+navadnih diferencialnih enačb (ODE). V glavnem se razlikujejo v tem, da so PDE lahko tudi nelinearne in
+moramo posledično uporabiti iterativne metode za reševanje sistemov linearnih enačb. Tu bomo spoznali 
+metodo končnih diferenc (FDM). Ta temleji na Taylorjevem razvoju s katerim lahko aproksimiramo odvod
+funkcije. To aproksimacijo nato vstavimo v PDE in dobimo sistem linearnih enačb. Ta sistem nato rešimo
+iterativno in dobimo končno rešitev. \\
+
+Fizikalni kontekst za to nalogo bo reševanje enodimenzionalne nestacionarne Schrödingerjeve enačbe, ki se
+glasi
+
+\begin{equation}
+    \left( i\hbar \frac{\partial}{\partial t} - H\right) \psi(x,\>t) = 0\>.
+    \label{schrodinger}
+\end{equation}
+
+Predstavlja osnovno orodje za nerelativistični opis kvantnih sistemov. V enačbi \ref{schrodinger} je $H$ Hamiltonian
+sistema, ki je v splošnem odvisen od časa. V našem primeru bomo obravnavali časovno neodvisen Hamiltonian
+
+\begin{equation}
+    H = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x)\>.
+    \label{hamiltonian}
+\end{equation}
+
+Z menjavo spremenljivk $H/\hbar \rightarrow H$, $x\sqrt{m/\hbar} \rightarrow x$ efektivno postavimo $\hbar = m = 1$.
+V tem primeru je Hamiltonian enak
+
+\begin{equation}
+    H = -\frac{1}{2} \frac{\partial^2}{\partial x^2} + V(x)\>.
+    \label{hamiltonian2}
+\end{equation}
+
+Razvoj stanja $\psi(x,\>t)$ v času $\psi(x,\>t + \Delta t)$ je opisan z približkom
+
+\begin{equation}
+    \psi(x,\>t + \Delta t) = e^{-iH\Delta t}\psi(x,\>t)\approx \dfrac{1-\frac{1}{2}iH\Delta t}
+    {1+\frac{1}{2}iH\Delta t}\psi(x,\>t)\>.
+    \label{razvoj}
+\end{equation}
+
+Območje $x\in[a,\>b]$ diskretiziramo na krajevno mrežo z $N$ točkami $x_j = a + j\Delta x$, kjer je $\Delta x = (b-a)/(N-1)$.
+Časovni razvoj spremljamo ob časovni mreži z $M$ točkami $t_m = m\Delta t$, kjer je $\Delta t$ časovni korak.
+
 
 
 \section{Naloga}

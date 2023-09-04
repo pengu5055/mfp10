@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from src import FDMSolver
 
 # Set some constants as far as this case goes
-N = 200
+N = 500
 x_range = (-40,40)
 omega = 0.2
 lamb = 10
@@ -46,12 +46,15 @@ M = periods * 1000
 t_points = np.linspace(0, T, M)
 
 solver = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, N)
-solution = solver.solve()
-analytic = analytic_solution(solver.x, 0, lamb=lamb, k=omega**2)
+# solution = solver.solve()
+a = solver.solve_Analytic(solver.x, solver.t)
 
 # Plot the solution
 # solver.plot_Animation(saveVideo=False, filename="case1b.mp4", fps=120)
-# solver.plot_Heatmap()
+solver.plot_Heatmap(analytic=True)
+
+# NOTE REMOVE FOR FURTHER PLOTS
+quit()
 
 # Instantiate another solver with a different N
 solver2 = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, 700)
@@ -77,8 +80,8 @@ plt.grid(c="#d1d1d1", alpha=0.5)
 plt.show()
 
 # Plot the differemce between the two solutions and the analytic solution
-analytic1 = np.abs(solver.analytic_solution(np.mean(solver.x), solver.t))**2
-analytic2 = np.abs(solver2.analytic_solution(np.mean(solver2.x), solver2.t))**2
+analytic1 = np.abs(solver.solve_Analytic(np.mean(solver.x), solver.t))**2
+analytic2 = np.abs(solver2.solve_Analytic(np.mean(solver2.x), solver2.t))**2
 print(f"Shape of analytic1: {analytic1.shape}")
 print(f"Shape of analytic2: {analytic2.shape}")
 avg_sol1 = np.mean(np.abs(solution)**2, axis=1)

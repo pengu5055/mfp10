@@ -112,7 +112,7 @@ class FDMSolver():
         def update(frame):
             line.set_ydata(np.abs(solution[frame])**2)
             line.set_color(color)
-            line2.set_ydata(np.abs(self.analytic_solution(x, frame*self.dt))**2)
+            line2.set_ydata(np.abs(self.solve_Analytic(x, frame*self.dt))**2)
             line2.set_color(color2)
             title.set_text(f"t = {frame*self.dt:.2f} s")
             return line,
@@ -121,7 +121,7 @@ class FDMSolver():
         fig, ax = plt.subplots(facecolor="#4d4c4c")
 
         line, = ax.plot(x, np.abs(solution[0])**2, label="Numeric sol.", c=color)
-        line2, = ax.plot(x, np.abs(self.analytic_solution(x, 0))**2, label="Analytic sol.", c=color2, ls="--")
+        line2, = ax.plot(x, np.abs(self.solve_Analytic(x, 0))**2, label="Analytic sol.", c=color2, ls="--")
         line3, = ax.plot(x, self.V, label="Potential", c="#d4ed82", ls=":")
 
         ax.set_xlabel("x")
@@ -158,7 +158,7 @@ class FDMSolver():
         """
         fig, ax = plt.subplots()
         plt.plot(self.x, np.abs(self.solution[t_index])**2, label=f"Numerical t={t_index*self.dt:.2f}")
-        plt.plot(self.x, np.abs(self.analytic_solution(self.x, t_index*self.dt))**2, label=f"Analytic t={t_index*self.dt:.2f}")
+        plt.plot(self.x, np.abs(self.solve_Analytic(self.x, t_index*self.dt))**2, label=f"Analytic t={t_index*self.dt:.2f}")
         plt.xlabel("x")
         plt.ylabel(r"$|\psi(x,t)|^2$")
         plt.title(f"t = {t_index*self.dt:.2f}")
@@ -166,27 +166,38 @@ class FDMSolver():
         plt.show()
 
 
-    def analytic_solution(self, x, t, alpha=0.447213595499958, lamb=10, k=0.04000000000000001):
+    def solve_Analytic(self, x, t, alpha=0.447213595499958, lamb=10, k=0.04000000000000001):
         """
         The analytic solution for the wavefunction in case 1.
+        Solving it pointwise and not vectorized because no time 
+        to vectorize.
         """
         omega = np.sqrt(k)
         xl = alpha * lamb
-        xi = alpha * x
 
-        return np.sqrt(alpha/ np.sqrt(np.pi)) * np.exp(-0.5*(xi - xl*np.cos(omega*t))**2 -
-                -1j * (omega*t/2 + xi*xl*np.sin(omega*t) - 0.25 * xl**2 * np.sin(2*omega*t))) 
+        self.analytic = np.empty((len(t), len(x)), dtype=np.complex128)
+
+        for i, x_i in enumerate(x):
+            for j, t_j in enumerate(t):
+                xi = alpha * x_i
+                self.analytic[j, i] = np.sqrt(alpha/ np.sqrt(np.pi)) * np.exp(-0.5*(xi - xl*np.cos(omega*t_j))**2 -
+                -1j * (omega*t_j/2 + xi*xl*np.sin(omega*t_j) - 0.25 * xl**2 * np.sin(2*omega*t_j)))
+        
+        return self.analytic
     
-    def plot_Heatmap(self):
+    def plot_Heatmap(self, analytic: bool = False):
         """
         Plot the solution as a heatmap.
         """
         plt.rcParams.update({'font.family': 'Verdana'})
         fig, ax = plt.subplots(facecolor="#4d4c4c")
         try:
-            data = np.abs(self.solution)**2
+            if analytic:
+                data = np.abs(self.analytic)**2
+            else:
+                data = np.abs(self.solution)**2
             data = np.flip(data, axis=0)
-        except NameError:
+        except AttributeError:
             print("Call solve method before trying to plot!")
         
         norm = mpl.colors.Normalize(vmin=np.min(data), vmax=np.max(data))
@@ -201,11 +212,11 @@ class FDMSolver():
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
-        plt.suptitle("Heatmap of the solution solved by FDM - Harmonic Potential", color="#dedede")
+        plt.suptitle("Heatmap of the Analytic solution - Harmonic Potential", color="#dedede")
         
         t_step = (self.t[-1] - self.t[0])/len(self.t)
 
-        plt.title(f"M = {len(self.t)}, N = {self.N}, t_step = {t_step:.2f}", color="#dedede")
+        plt.title(f"M = {len(self.t)}, N = {self.N}, t_step = {t_step:.2e}", color="#dedede")
 
         scalar_Mappable = plt.cm.ScalarMappable(norm=norm, cmap=cmr.ghostlight)
         cb = plt.colorbar(scalar_Mappable, ax=ax, label=r"|\psi(x,t)|^2$",
