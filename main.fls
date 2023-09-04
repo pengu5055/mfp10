@@ -221,11 +221,12 @@ INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 OUTPUT main.toc
-INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
@@ -254,3 +255,5 @@ INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\ams
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb

@@ -196,9 +196,31 @@ v praznem prostoru $V(x) = 0$. Analitična rešitev za to stanje je
     \label{analiticna_resitev2}
 \end{equation}
 \section{Opis reševanja}
+Zdaj praktično delam "faks zaključek" speedrun, torej ta naloga žal ni tako podrobno rešena,
+kot bi mogoče želel. Uporabil sem standardni ansambel programskih paketov, ki sem jih uporabljal
+tudi pri prejšnji nalogi. Torej \texttt{numpy}, \texttt{scipy} in \texttt{matplotlib}. Pri tej nalogi
+žal nisem imel možnosti (zaradi omejenega časa), da bi delal kakšne divje eksperimente, torej je to praktično to
+kar se tiče programske opreme.\\
+
+\subsection{FDMSolver}
+Programersko sem se naloge lotil identično kot pri prejšnji nalogi. Torej sem napisal razred \texttt{FDMSolver},
+ki vsebuje vse potrebne metode za reševanje te naloge. V konstruktorju razreda \texttt{FDMSolver} se inicializira
+vse potrebno, od tam naprej pa lahko uporabnik kliče razne funkcije. Večina jih je pravzaprav za risanje, saj je 
+razred priročen storage za vse potrebne podatke in posledično risarski funkciji ni potrebno podati ogromno argumentov.
+V glavnem je razred \texttt{FDMSolver} zelo podoben kot \texttt{SpectralSolver} iz prejšnje naloge. Glavna razlika
+in cel point nalog pa je njegova metoda \texttt{solve()}. Tu se incializirajo še potrebne matrike in se začne iterativno
+reševanje sistema. Pravzaprav tu tokrat nisem naredil res čisto nič posebnega, samo običajno matrično množenje
+\texttt{numpy} \texttt{ndarray}-ov. Se mi zdi škoda, ker bi lahko preverjal svojo implementacijo proti kaki, ki jo 
+ima recimo \texttt{scipy} ali pa \texttt{numpy}. Recimo \texttt{scipy.sparse.linalg.bicgstab()} se mi. Ali pa v našem
+primeru, ker imamo tridiagonalno matriko bi moral dobro delati \texttt{scipy.linalg.solve\_banded()}. 
+Anyways žal tega nisem imel časa narediti.\\
 
 \section{Rezultati}
-
+\subsection{Prvi primer - harmonski oscilator}
+Za prvi primer sem uporabil začetno stanje \ref{zacetno_stanje1}. 
+Začetno stanje sem diskretiziral na mrežo z $N=300$ točkami, vsaj prvotno. Čas sem spremljal originalno na mreži z 
+$M=1100$ točkami torej $100$ na periodo, kjer je bilo period potem $11$. To se mi je zdelo sila bedno. 
+Plačal sem za cel procesor, uporabljal bom cel procesor. Tako sem časovno mrežo razširil na $M=11000$ 
 
 \section{Komentarji in izboljšave}
 
