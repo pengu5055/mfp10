@@ -178,9 +178,23 @@ Analitična rešitev za to stanje je
     \label{analiticna_resitev1}
 \end{equation}
 
-kjer je $\xi=\alpha x$
+kjer je $\xi=\alpha x$ in $\xi_\lambda = \alpha\lambda$. Postavimo $\omega=0.2$ in $\lambda=10$.
+Za krajevno mrežo vzamemo razpon $x\in[-40, 40]$ in $N=300$ točk. Nihajni čas je $T=2\pi/\omega$,
+zato primerno prilagodimo časovni korak $\Delta t$ in stanje opazujemo deset period. V drugem delu naloge pa moramo spremljati razvoj gaussovskega valovnega paketa 
 
+\begin{equation}
+    \Psi(x,\>0) = (2\pi\sigma_0^2)^{-1/4} e^{ik_0(x-\lambda)}e^{-(x-\lambda)^2/(2\sigma_0)^2}\>.
+    \label{zacetno_stanje2}
+\end{equation}
 
+v praznem prostoru $V(x) = 0$. Analitična rešitev za to stanje je
+
+\begin{equation}
+    \psi(x,\>t) = \frac{(2\pi\sigma_0^2)^{-1/4}}{\sqrt{1 + i t/(2\sigma_0^2)}}
+    \exp{\left[\frac{-(x-\lambda)^2/(2\sigma_0^2) + ik_0(x-\lambda)-ik_0^2 t/2}
+    {\sqrt{1 + i t/(2\sigma_0^2)}}\right]}
+    \label{analiticna_resitev2}
+\end{equation}
 \section{Opis reševanja}
 
 \section{Rezultati}
