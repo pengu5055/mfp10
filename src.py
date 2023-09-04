@@ -212,7 +212,7 @@ class FDMSolver():
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
-        plt.suptitle("Heatmap of the Analytic solution - Harmonic Potential", color="#dedede")
+        plt.suptitle("Heatmap of the solution solved by FDM - Harmonic Potential", color="#dedede")
         
         t_step = (self.t[-1] - self.t[0])/len(self.t)
 

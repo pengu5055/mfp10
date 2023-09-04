@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1693861384 "main.aux" "main.bbl" "main" 1693861529 0
+["bibtex main"] 1693863467 "main.aux" "main.bbl" "main" 1693863470 0
   "./sources.bib" 1693580566 585 59db498271dfb5e1811a288748c6fc20 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/unsrt.bst" 1291868336 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1693861528 2146 bc0b9b32d64f4a960896bc87e30db937 "pdflatex"
+  "main.aux" 1693863469 2374 6b874affc05223c72b0728d83155cfcc "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1693861526 "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" "main.pdf" "main" 1693861529 0
+["pdflatex"] 1693863468 "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" "main.pdf" "main" 1693863470 0
   "C:/Users/Marko Urbanc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693775255 81068 299f700eb05b1217173e62b88b513bd0 ""
   "C:/Users/Marko Urbanc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1691572099 24122251 e939fd6a89cc5679b97085233755a785 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -118,13 +118,15 @@
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1673965817 123 a302f2c651a95033260db60e51527ae8 ""
-  "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" 1693861526 9871 f06e9f3a0fd95fa4d3f3f3de7e100b3b ""
+  "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" 1693863464 12124 a2cba939ac83b050c87dc2397f257fff ""
+  "images/case1_org.png" 1693863384 127254 f6bc6f5afd1cb6b7d3e63a8f9ef35977 ""
+  "images/delta_N700_N200.png" 1693835038 31517 668b3b78a89de724151f7fa3f5e3a99a ""
   "logo.png" 1693580566 8303 8f7f5965ff153bbc45aecaef5ccdb0ac ""
-  "main.aux" 1693861528 2146 bc0b9b32d64f4a960896bc87e30db937 "pdflatex"
-  "main.bbl" 1693861384 52 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1693861528 945 1c700cf5a132a4e115aa5f7abc6d8752 "pdflatex"
-  "main.tex" 1693861526 9871 f06e9f3a0fd95fa4d3f3f3de7e100b3b ""
-  "main.toc" 1693861528 595 af42cc768348b8ce9d1a7bbe3c176563 "pdflatex"
+  "main.aux" 1693863469 2374 6b874affc05223c72b0728d83155cfcc "pdflatex"
+  "main.bbl" 1693863468 52 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.out" 1693863469 945 52152359fff563d99491438c8308d3a4 "pdflatex"
+  "main.tex" 1693863464 12124 a2cba939ac83b050c87dc2397f257fff ""
+  "main.toc" 1693863469 595 6d2bbda2f7cd269895c392263bb616f3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

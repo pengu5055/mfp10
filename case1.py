@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from src import FDMSolver
 
 # Set some constants as far as this case goes
-N = 500
+N = 300
 x_range = (-40,40)
 omega = 0.2
 lamb = 10
@@ -42,16 +42,15 @@ def analytic_solution(x, t, alpha=alpha, lamb=lamb, k=k):
 # We need to observe 10 periods T = 2pi/omega
 periods = 11
 T = periods * 2*np.pi/omega
-M = periods * 1000
+# M = periods * 1000
+M = periods * 100
 t_points = np.linspace(0, T, M)
 
 solver = FDMSolver(initial_condition, harmonic_potential, x_range, t_points, N)
-# solution = solver.solve()
-a = solver.solve_Analytic(solver.x, solver.t)
-
+solution = solver.solve()
 # Plot the solution
 # solver.plot_Animation(saveVideo=False, filename="case1b.mp4", fps=120)
-solver.plot_Heatmap(analytic=True)
+solver.plot_Heatmap()
 
 # NOTE REMOVE FOR FURTHER PLOTS
 quit()

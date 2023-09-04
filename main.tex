@@ -218,9 +218,49 @@ Anyways žal tega nisem imel časa narediti.\\
 \section{Rezultati}
 \subsection{Prvi primer - harmonski oscilator}
 Za prvi primer sem uporabil začetno stanje \ref{zacetno_stanje1}. 
-Začetno stanje sem diskretiziral na mrežo z $N=300$ točkami, vsaj prvotno. Čas sem spremljal originalno na mreži z 
+Začetno stanje sem diskretiziral na mrežo z $N=300$ točkami, vsaj prvotno. Izkazalo se je,
+da pri nastavitvah, ki so predlagane v nalogi, rešitev čez nekaj nihajev razpade. Nedopustno.
+Čas sem spremljal originalno na mreži z 
 $M=1100$ točkami torej $100$ na periodo, kjer je bilo period potem $11$. To se mi je zdelo sila bedno. 
-Plačal sem za cel procesor, uporabljal bom cel procesor. Tako sem časovno mrežo razširil na $M=11000$ 
+Plačal sem za cel procesor, uporabljal bom cel procesor. Tako sem časovno mrežo razširil na $M=11000$ točk.
+Matrično množenje v \texttt{numpy} je že po defaultu paralelizirano, torej very nice. \\
+
+Zdelo se mi je zanimivo, da bi poiskal okvirno koliko točk potrebjemo za smiselno rešitev (torej, takšno,
+ki ne razpade po 10 nihajih). Ugotovil sem, da je spodnja meja okoli $N=200$. Zdaj, če bi imel čas 
+bi šel seveda te stvari vse dejansko izvest, ampak zanimivo bi bilo, kolikšen je dejansko performance
+gain oz. krajši čas računanja. Ker meni se je zdelo $N = 200,\> M = 11000$ opazno hitrejše kot 
+$N = 300,\> M = 1100$. Recimo če zdaj gledamo large scale in si predstavljamo, da rešujemo res nek 
+zakompliciran velik model, na porazdeljenem sistemu, se mi zdi zelo koristna metrika, za koliko 
+več elektrike (oz. cloud hosting resources) bo potrebno plačati za tistih več točk in
+kolikšna bo izboljšava v dobljenem rezultatu. \\
+
+Predstavim recimo lahko tale graf, ki se mi je zdel razmeroma zanimiv (pa zato, ker drugih, niti
+nimam). Predstavlja razliko med rešitvijo z zelo gosto mrežo $N=700$ in z našo domnevno spodnjo
+mejo $N=200$. Časovni grid je bil v obeh primerih $M=11000$. Vidimo, da je razlika v rešitvi
+zelo zelo majhna, do te mere, da me skrbi, da sem kje kaj zamočil in tega nisem pravočasno opazil.
+Ampak vizualno, ko človek gleda dobljene animacije zgledata res identično.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/delta_N700_N200.png}
+    \caption*{Razlika med rešitvama z $N=700$ in $N=200$}
+\end{figure}
+
+Pa ja, razlika med rešitvama definitivno narašča z časom, kot je pričakovano, saj se rešitve še vedno kvarijo
+in sklepam, da se tista pri $N=200$ kvari hitreje, ampak bralec, poglej ta red velikosti razlike. \\
+
+Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni obrok je serviran! Na sliki
+\ref{fig:harmonic_oscillator_org} je prikazana rešitev pri originalnih parametrih, torej $N=300$, $M=1100$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_org.png}
+    \caption*{Rešitev pri originalnih parametrih.}
+    \label{fig:harmonic_oscillator_org}
+\end{figure}
+
+
+
 
 \section{Komentarji in izboljšave}
 
