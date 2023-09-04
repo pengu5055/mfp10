@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  5 SEP 2023 00:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  5 SEP 2023 01:17
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -474,56 +474,80 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-)
+) (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+ (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/generic/soul\soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks32
+\SOUL@lasttoken=\toks33
+\SOUL@syllable=\toks34
+\SOUL@cmds=\toks35
+\SOUL@buffer=\toks36
+\SOUL@token=\toks37
+\SOUL@syllgoal=\dimen193
+\SOUL@syllwidth=\dimen194
+\SOUL@charkern=\dimen195
+\SOUL@hyphkern=\dimen196
+\SOUL@dimen=\dimen197
+\SOUL@dimeni=\dimen198
+\SOUL@minus=\count344
+\SOUL@comma=\count345
+\SOUL@apo=\count346
+\SOUL@grave=\count347
+\SOUL@spaceskip=\skip62
+\SOUL@ttwidth=\dimen199
+\SOUL@uldp=\dimen256
+\SOUL@ulht=\dimen257
+))
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > main.aex <nul: /p x=^%~$PATH:i>> main.aex)...executed.
 
 runsystem(del main.aex)...executed.
 
  (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count344
+\l__color_backend_stack_int=\count348
 \l__pdf_internal_box=\box74
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
  (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count345
-\scratchdimen=\dimen193
+\scratchcounter=\count349
+\scratchdimen=\dimen258
 \scratchbox=\box75
-\nofMPsegments=\count346
-\nofMParguments=\count347
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count348
-\MPscratchDim=\dimen194
-\MPnumerator=\count349
-\makeMPintoPDFobject=\count350
-\everyMPtoPDFconversion=\toks33
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen259
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks39
 ) (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 49.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -531,14 +555,14 @@ Package hyperref Info: Link coloring OFF on input line 47.
  (C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-\c@lstlisting=\count351
+\c@lstlisting=\count355
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Package translations Info: no dictionary file `translations-basic-dictionary-slovenian.trsl' found. on input line 47.
-<logo.png, id=36, 220.67175pt x 141.22992pt>
+Package translations Info: no dictionary file `translations-basic-dictionary-slovenian.trsl' found. on input line 49.
+<logo.png, id=44, 220.67175pt x 141.22992pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 50.
+Package pdftex.def Info: logo.png  used on input line 52.
 (pdftex.def)             Requested size: 220.6712pt x 141.22955pt.
  [1
 
@@ -550,159 +574,160 @@ Package pdftex.def Info: logo.png  used on input line 50.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.72 \newpage
+l.74 \newpage
               [1]
-Underfull \hbox (badness 10000) in paragraph at lines 74--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--85
 
  []
 
 [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 203--208
+Underfull \hbox (badness 10000) in paragraph at lines 205--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--221
+Underfull \hbox (badness 10000) in paragraph at lines 212--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--231
+Underfull \hbox (badness 10000) in paragraph at lines 226--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--240
+Underfull \hbox (badness 10000) in paragraph at lines 234--242
 
  []
 
 [4]
-<./images/delta_N700_N200.png, id=97, 462.528pt x 346.896pt>
+<./images/delta_N700_N200.png, id=107, 462.528pt x 346.896pt>
 File: ./images/delta_N700_N200.png Graphic file (type png)
 <use ./images/delta_N700_N200.png>
-Package pdftex.def Info: ./images/delta_N700_N200.png  used on input line 249.
+Package pdftex.def Info: ./images/delta_N700_N200.png  used on input line 251.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 255--257
 
  []
 
-<./images/case1_org.png, id=99, 462.528pt x 346.896pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
+
+ []
+
+[5 <./images/delta_N700_N200.png>]
+<./images/case1_org.png, id=116, 462.528pt x 346.896pt>
 File: ./images/case1_org.png Graphic file (type png)
 <use ./images/case1_org.png>
-Package pdftex.def Info: ./images/case1_org.png  used on input line 261.
+Package pdftex.def Info: ./images/case1_org.png  used on input line 265.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-[5 <./images/delta_N700_N200.png>]
-<./images/case1_N100.png, id=107, 462.528pt x 346.896pt>
+<./images/case1_N100.png, id=117, 462.528pt x 346.896pt>
 File: ./images/case1_N100.png Graphic file (type png)
 <use ./images/case1_N100.png>
-Package pdftex.def Info: ./images/case1_N100.png  used on input line 270.
+Package pdftex.def Info: ./images/case1_N100.png  used on input line 274.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [6 <./images/case1_org.png>]
-<./images/case1_N200.png, id=114, 462.528pt x 346.896pt>
+<./images/case1_N200.png, id=119, 462.528pt x 346.896pt>
 File: ./images/case1_N200.png Graphic file (type png)
 <use ./images/case1_N200.png>
-Package pdftex.def Info: ./images/case1_N200.png  used on input line 280.
+Package pdftex.def Info: ./images/case1_N200.png  used on input line 286.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [7 <./images/case1_N100.png>]
 <./images/case1_N300.png, id=121, 462.528pt x 346.896pt>
 File: ./images/case1_N300.png Graphic file (type png)
 <use ./images/case1_N300.png>
-Package pdftex.def Info: ./images/case1_N300.png  used on input line 289.
+Package pdftex.def Info: ./images/case1_N300.png  used on input line 296.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [8 <./images/case1_N200.png>]
-<./images/case1_N700.png, id=128, 462.528pt x 346.896pt>
+<./images/case1_N700.png, id=123, 462.528pt x 346.896pt>
 File: ./images/case1_N700.png Graphic file (type png)
 <use ./images/case1_N700.png>
-Package pdftex.def Info: ./images/case1_N700.png  used on input line 298.
+Package pdftex.def Info: ./images/case1_N700.png  used on input line 306.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [9 <./images/case1_N300.png>]
-<./images/case1_analytic.png, id=136, 462.528pt x 346.896pt>
+<./images/case1_analytic.png, id=125, 462.528pt x 346.896pt>
 File: ./images/case1_analytic.png Graphic file (type png)
 <use ./images/case1_analytic.png>
-Package pdftex.def Info: ./images/case1_analytic.png  used on input line 308.
+Package pdftex.def Info: ./images/case1_analytic.png  used on input line 316.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [10 <./images/case1_N700.png>]
-<./images/delta_numeric_analytic_N700.png, id=145, 462.528pt x 346.896pt>
+<./images/delta_numeric_analytic_N700.png, id=127, 462.528pt x 346.896pt>
 File: ./images/delta_numeric_analytic_N700.png Graphic file (type png)
 <use ./images/delta_numeric_analytic_N700.png>
-Package pdftex.def Info: ./images/delta_numeric_analytic_N700.png  used on input line 317.
+Package pdftex.def Info: ./images/delta_numeric_analytic_N700.png  used on input line 325.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [11 <./images/case1_analytic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 322--327
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--335
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--335
+Underfull \hbox (badness 10000) in paragraph at lines 337--343
 
  []
 
-<./images/case2_N500_expanded.png, id=154, 462.528pt x 346.896pt>
+<./images/case2_N500_expanded.png, id=130, 462.528pt x 346.896pt>
 File: ./images/case2_N500_expanded.png Graphic file (type png)
 <use ./images/case2_N500_expanded.png>
-Package pdftex.def Info: ./images/case2_N500_expanded.png  used on input line 340.
+Package pdftex.def Info: ./images/case2_N500_expanded.png  used on input line 348.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-[12 <./images/delta_numeric_analytic_N700.png>]
-<./images/case2_analytic.png, id=162, 462.528pt x 346.896pt>
+<./images/case2_analytic.png, id=131, 462.528pt x 346.896pt>
 File: ./images/case2_analytic.png Graphic file (type png)
 <use ./images/case2_analytic.png>
-Package pdftex.def Info: ./images/case2_analytic.png  used on input line 347.
+Package pdftex.def Info: ./images/case2_analytic.png  used on input line 355.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--359
+Underfull \hbox (badness 10000) in paragraph at lines 360--367
 
  []
 
-[13 <./images/case2_analytic.png> <./images/case2_N500_expanded.png>]
-<./images/case2_N100.png, id=171, 462.528pt x 346.896pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--374
+
+ []
+
+[6] [7 <./images/case1_org.png> <./images/case1_N100.png>] [8 <./images/case1_N200.png> <./images/case1_N300.png>] [9 <./images/case1_N700.png> <./images/case1_analytic.png>] [10 <./images/delta_numeric_analytic_N700.png> <./images/case2_N500_expanded.png>]
+<./images/case2_N100.png, id=170, 462.528pt x 346.896pt>
 File: ./images/case2_N100.png Graphic file (type png)
 <use ./images/case2_N100.png>
-Package pdftex.def Info: ./images/case2_N100.png  used on input line 369.
+Package pdftex.def Info: ./images/case2_N100.png  used on input line 379.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<./images/case2_N200.png, id=172, 462.528pt x 346.896pt>
+<./images/case2_N200.png, id=173, 462.528pt x 346.896pt>
 File: ./images/case2_N200.png Graphic file (type png)
 <use ./images/case2_N200.png>
-Package pdftex.def Info: ./images/case2_N200.png  used on input line 378.
+Package pdftex.def Info: ./images/case2_N200.png  used on input line 390.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [14 <./images/case2_N100.png>]
-<./images/case2_N400.png, id=179, 462.528pt x 346.896pt>
+<./images/case2_N400.png, id=176, 462.528pt x 346.896pt>
 File: ./images/case2_N400.png Graphic file (type png)
 <use ./images/case2_N400.png>
-Package pdftex.def Info: ./images/case2_N400.png  used on input line 392.
+Package pdftex.def Info: ./images/case2_N400.png  used on input line 406.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [15 <./images/case2_N200.png>]
-<./images/case2_N700.png, id=186, 462.528pt x 346.896pt>
+<./images/case2_N700.png, id=177, 462.528pt x 346.896pt>
 File: ./images/case2_N700.png Graphic file (type png)
 <use ./images/case2_N700.png>
-Package pdftex.def Info: ./images/case2_N700.png  used on input line 400.
+Package pdftex.def Info: ./images/case2_N700.png  used on input line 415.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [16 <./images/case2_N400.png>]
-<./images/delta_case2.png, id=193, 462.528pt x 346.896pt>
+<./images/delta_case2.png, id=179, 462.528pt x 346.896pt>
 File: ./images/delta_case2.png Graphic file (type png)
 <use ./images/delta_case2.png>
-Package pdftex.def Info: ./images/delta_case2.png  used on input line 410.
+Package pdftex.def Info: ./images/delta_case2.png  used on input line 427.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [17 <./images/case2_N700.png>] [18 <./images/delta_case2.png>] (main.aux)
+ [11] [12 <./images/case2_analytic.png> <./images/case2_N100.png>] [13 <./images/case2_N200.png> <./images/case2_N400.png>] [14 <./images/case2_N700.png> <./images/delta_case2.png>] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DADF2F6A9DCE2282EC9696B97D8EB397;1060.
+(rerunfilecheck)             Checksum: F4D0DDAB484F2424711034F134B19525;1455.
  ) 
 Here is how much of TeX's memory you used:
- 20279 strings out of 475550
- 393638 string characters out of 5759194
+ 20519 strings out of 475550
+ 397451 string characters out of 5759194
  1935238 words of memory out of 5000000
- 41217 multiletter control sequences out of 15000+600000
- 561780 words of font info for 49 fonts, out of 8000000 for 9000
+ 41451 multiletter control sequences out of 15000+600000
+ 562093 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,10n,79p,368b,942s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (19 pages, 1200390 bytes).
+Output written on main.pdf (15 pages, 1200948 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 54 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

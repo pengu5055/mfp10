@@ -15,6 +15,8 @@
 \usepackage[table,xcdraw]{xcolor}
 \setlength\parindent{0pt}
 
+\usepackage{soul}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -254,9 +256,11 @@ Pa ja, razlika med rešitvama definitivno narašča z časom, kot je pričakovan
 in sklepam, da se tista pri $N=200$ kvari hitreje, ampak bralec, poglej ta red velikosti razlike. \\
 
 Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni obrok je serviran! Na Sliki
-\ref{fig:harmonic_oscillator_org} je prikazana rešitev pri originalnih parametrih, torej $N=300$, $M=1100$.
+\ref{fig:harmonic_oscillator_org} je prikazana rešitev pri originalnih parametrih, torej $N=300$, $M=1100$. \\
 
-\begin{figure}[H]
+\subsubsection{Komentarji k glavnemu obroku}
+
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_org.png}
     \caption{Rešitev pri originalnih parametrih.}
@@ -265,35 +269,39 @@ Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni 
 
 Vidimo, da se rešitev hitro razleti. Sedaj pa serija slik, z bolj fino časovno mrežo.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_N100.png}
     \caption{Rešitev pri $N=100$,$M=11000$.}
+    \label{fig:harmonic_oscillator_N100}
 \end{figure}
 
-Tu vidimo, da kljub temu, da je časovna mreža zelo fino diskretizirana, se rešitev še vedno razleti.
+Na Sliki \ref{fig:harmonic_oscillator_N100} vidimo, da kljub temu, da je časovna mreža zelo fino diskretizirana,
+ se rešitev še vedno razleti.
 Zanimivo je, da se razleti na drugačen način kot pri originalnih parametrih. Vzorec je drugačen. Nisem 
 pa prepričan zakaj pride do tega. 
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_N200.png}
     \caption{Rešitev pri $N=200$,$M=11000$.}
+    \label{fig:harmonic_oscillator_N200}
 \end{figure}
 
-To je naša spodnja meja za smiselen $N$. Rešitev se malo razleze, ampak pride 
-skozi 10 nihajev v relativno celem stanju, tako da se zdi zadostno.
+Slika \ref{fig:harmonic_oscillator_N200} prikazuje našo spodnjo mejo za smiselen $N$. 
+Rešitev se malo razleze, ampak pride skozi 10 nihajev v relativno celem stanju, tako da se zdi zadostno.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_N300.png}
     \caption{Rešitev pri $N=300$,$M=11000$.}
+    \label{fig:harmonic_oscillator_N300}
 \end{figure}
 
-Tu je rešitev pri originalnih parametrih, samo z bolj fino časovno mrežo. Rešitev tu
-je zelo lepa. Vedno manj je deformacij. 
+Na Sliki \ref{fig:harmonic_oscillator_N300} je rešitev pri originalnih parametrih, samo z bolj fino časovno mrežo.
+Rešitev tu je zelo lepa. Vedno manj je deformacij. 
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_N700.png}
     \caption{Rešitev pri $N=700$,$M=11000$.}
@@ -303,7 +311,7 @@ Načeloma imam tudi sliko še za $N=500$ ampak je že precej podobna tej, tako d
 Tole je pa rešitev pri $N=700$. Pride skozi 10 nihajev brez, da bi bilo opaziti kake res hude deformacije.
 Za primerjavo pa seveda še analitična rešitev na Sliki \ref{fig:harmonic_oscillator_analytic}.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_analytic.png}
     \caption{Analitična rešitev.}
@@ -312,7 +320,7 @@ Za primerjavo pa seveda še analitična rešitev na Sliki \ref{fig:harmonic_osci
 
 Lahko si na hitro pogledamo še odstopanje med analitično in numerično rešitvijo. Na Sliki \ref{fig:harmonic_oscillator_error}
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/delta_numeric_analytic_N700.png}
     \caption{Odstopanje med analitično in numerično rešitvijo.}
@@ -335,14 +343,14 @@ elemente kopiral iz prvega primera. \\
 
 Rešitev, ki jo dobimo za $N=500$ je na Sliki \ref{fig:gaussian_org}.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_N500_expanded.png}
     \caption{Rešitev pri $N=500$, $M=11000$.}
     \label{fig:gaussian_org}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_analytic.png}
     \caption{Analitična rešitev.}
@@ -362,58 +370,68 @@ z rešitvijo. Namreč moj razred \texttt{FDMSolver} v tem primeru deloval čudno
 To mislim v tem smislu, da se je valovni paket na robu odbil in potem začel interferirati sam s seboj.
 Tudi temu sem namenil debugging session, a nisem uspel najti vzroka. So pa grafi arguably 10x bolj
 kul in zanimivi kot če bi samo gledali valovni paket, v praznem prostoru. With that being said,
-se mi zdi, da je zdaj čas za še eno galerijo.
+se mi zdi, da je zdaj čas za še eno galerijo.\\
 
-\begin{figure}[H]
+\subsubsection{Komentarji k galeriji}
+
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_N100.png}
     \caption{Rešitev pri $N=100$, $M=11000$.}
+    \label{fig:gaussian_N100}
 \end{figure}
 
-V primeru rešitve za $N=100$ rešitev praktično nič ne naredi preden se ne raztopi in razpade. Not 
-very interesting. Ampak je pa zanimivo, da je spet $N=200$ spodnja meja za smiselno rešitev.
+V primeru rešitve za $N=100$ na Sliki \ref{fig:gaussian_N100} rešitev praktično nič ne naredi 
+preden se ne raztopi in razpade. Not very interesting. Ampak je pa zanimivo, da je spet $N=200$
+spodnja meja za smiselno rešitev, kot nam kaže Slika \ref{fig:gaussian_N200}.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_N200.png}
     \caption{Rešitev pri $N=200$, $M=11000$.}
+    \label{fig:gaussian_N200}
 \end{figure}
 
-Tu se precej dobro vidi tudi ta čudnost, ki sem jo omenil. Valovni paket se odbije od roba in potem
-začne interferirati sam s seboj. To se še boljše vidi na tej sliki, ki jo imam. Embarraingly enough
+Na Sliki \ref{fig:gaussian_N200} se precej dobro vidi tudi ta čudnost, ki sem jo omenil. 
+Valovni paket se odbije od roba in potem začne interferirati sam s seboj. To se še boljše vidi na tej 
+Sliki \ref{fig:gaussian_N400}, ki jo imam. Embarraingly enough
 se ne spomnem več pogojev nastanka te slike, čeprav je nekaj parametrov zapisanih na njej. V splošnem
 naj bi prikazovala isti proces le pri $N=400$ in na daljši časovni skali (razen, da je zaradi nekega 
 razloga časovna skala tu manjša). ((Ima to veze z analitično rešitvijo? Me tepe ne poslušanje navodil?))
 V glavnem, se odbije in praktično izgine, ker je tako razlezen. Potem pa se začne pojavljati na drugi
 stran, kjer se spet tako kot prej odbije ipd.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_N400.png}
     \caption{Unknown rešitev pri $N=400$, $M=11000$.}
+    \label{fig:gaussian_N400}
 \end{figure}
 
 Meni so te interferenčne proge in vzorci res všeč. Tako da obvezno še $N=700$ in potem se ustavim. 
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/case2_N700.png}
     \caption{Rešitev pri $N=700$, $M=11000$.}
+    \label{fig:gaussian_N700}
 \end{figure}
 
-Tu se mi zdi, da se fenomenalno vidi vzorec. Vztrajal sem, da rabimo ta graf zato, da lahko kot pri 
-prvi nalogi narišemo še primerjalni plot med $N=700$ in $N=200$ rešitvijo. Spet se izkaže, da je razlika
-izredno majhna, čeprav je nekoliko večja kot pri prejšnji nalogi.
+Tu na Sliki \ref{fig:gaussian_N700} se mi zdi, da se fenomenalno vidi vzorec. 
+Vztrajal sem, da rabimo ta graf zato, da lahko kot pri  prvi nalogi narišemo še primerjalni plot 
+med $N=700$ in $N=200$ rešitvijo. Spet se izkaže, da je razlika izredno majhna, čeprav je nekoliko 
+večja kot pri prejšnji nalogi.
 
-\begin{figure}[H]
+\begin{figure}[p]
     \centering
     \includegraphics[width=\textwidth]{./images/delta_case2.png}
     \caption{Razlika med rešitvama z $N=700$ in $N=200$}
 \end{figure}
 
 \section{Komentarji in izboljšave}
-Želim si, da bi imel čas se igrati z LaTeX-om, da bi lahko slike lepše vstavil v poročilo, ker tole 
-je obupno, amapak it is what it is. Veliko želj sem imel še za to nalogo, ampak se mi tako mudi z vsem,
+\st{Želim si, da bi imel čas se igrati z LaTeX-om, da bi lahko slike lepše vstavil v poročilo, ker tole 
+je obupno, amapak it is what it is.} Do neke mere se mi zdi, da sem malo uredil, s tem, da sem premaknil slike 
+na svoje strani in ustvaril kvazi-galerije. Veliko želj sem imel še za to nalogo, ampak se mi tako mudi z vsem,
 da res ne gre. Žal mi je, da nisem imel časa narediti več. As of writing naj bi imel ustni izpit čez okoli
 dva dneva in nisem še niti začel z učenjem. Tako da se mi zdi, da je to to. Upam, da sem ostale stvari
 ustrezno sproti pokomentiral in da je bilo branje prijetno. Poročilo sem napisal v res zelo sproščenem
