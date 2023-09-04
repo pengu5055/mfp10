@@ -332,9 +332,7 @@ INPUT .\images\delta_case2.png
 INPUT .\images\delta_case2.png
 INPUT .\images\delta_case2.png
 INPUT .\images\delta_case2.png
-INPUT .\main.bbl
-INPUT .\main.bbl
-INPUT main.bbl
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -360,5 +358,7 @@ INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\ams
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
 INPUT C:\Users\Marko Urbanc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
