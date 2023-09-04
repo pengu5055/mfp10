@@ -52,8 +52,9 @@ class FDMSolver():
         
         # Set the boundary conditions
         # I think this might be a potential error. It should be 0 across all indices
-        self.solution[:, 0] = 0
-        self.solution[:, -1] = 0
+        # NOTE: Debugging here!
+        # self.solution[:, 0] = 0
+        # self.solution[:, -1] = 0
 
         # Set the potential
         self.V = self.potential(self.x)
@@ -113,7 +114,7 @@ class FDMSolver():
         def update(frame):
             line.set_ydata(np.abs(solution[frame])**2)
             line.set_color(color)
-            line2.set_ydata(np.abs(self.analytic_solution(x, frame*self.dt))**2)
+            line2.set_ydata(np.abs(self.solve_Analytic(x, frame*self.dt))**2)
             line2.set_color(color2)
             title.set_text(f"t = {frame*self.dt:.2f} s")
             return line,
@@ -122,14 +123,14 @@ class FDMSolver():
         fig, ax = plt.subplots(facecolor="#4d4c4c")
         title = plt.title(f"t={0:.2f} s", color="#dedede")
         line, = ax.plot(x, np.abs(solution[0])**2, label="Numeric sol.", c=color)
-        line2, = ax.plot(x, np.abs(self.analytic_solution(self.x, self.t[0]))**2, label="Analytic sol.", c=color2, ls="--")
+        line2, = ax.plot(x, np.abs(self.solve_Analytic(self.x, self.t[0]))**2, label="Analytic sol.", c=color2, ls="--")
 
         ax.set_xlabel("x")
         ax.set_ylabel("T")
         plt.suptitle("Schrodinger's equation - Case 2", color="#dedede")
         L = plt.legend()
         # ax.set_ylim(-0.1, 0.5)
-        # ax.set_xlim(-15, 15)
+        ax.set_xlim(-0.5, 1.5)
 
         ax.set_facecolor("#bababa")
         plt.grid(c="#d1d1d1", alpha=0.5)
@@ -157,7 +158,7 @@ class FDMSolver():
         """
         fig, ax = plt.subplots()
         plt.plot(self.x, np.abs(self.solution[t_index])**2, label=f"Numerical t={t_index*self.dt:.2f}")
-        plt.plot(self.x, np.abs(self.analytic_solution(self.x, t_index*self.dt))**2, label=f"Analytic t={t_index*self.dt:.2f}")
+        plt.plot(self.x, np.abs(self.solve_Analytic(self.x, t_index*self.dt))**2, label=f"Analytic t={t_index*self.dt:.2f}")
         plt.xlabel("x")
         plt.ylabel(r"$|\psi(x,t)|^2$")
         plt.title(f"t = {t_index*self.dt:.2f}")
@@ -165,28 +166,39 @@ class FDMSolver():
         plt.show()
 
 
-    def analytic_solution(self, x, t, sigma_0=1/20, k_0 = 50*np.pi, lamb=0.25):
+    def solve_Analytic(self, x, t, sigma_0=1/20, k_0 = 50*np.pi, lamb=0.25):
         """
         The analytic solution for the wavefunction.
+        Not vectorized because no time.
         """
-        return (2*np.pi*sigma_0**2)**(-1/4) / np.sqrt(1 + 1j*t/(2*sigma_0**2)) * \
-                np.exp((-(x-lamb)**2 / (4*sigma_0**2) + 1j*k_0*(x-lamb) - 1j * k_0**2 * t/2) /(1 + 1j*t/(2*sigma_0**2)))
+        self.t_data = (t[1] - t[0], len(t))  # Because can have its own time points
+        self.analytic_sol = np.empty((len(t), len(x)), dtype=np.complex128)
+        for i, x_i in enumerate(x):
+            for j, t_j in enumerate(t):
+                self.analytic_sol[j, i] = (2*np.pi*sigma_0**2)**(-1/4) / np.sqrt(1 + 1j*t_j/(2*sigma_0**2)) * \
+                        np.exp((-(x_i-lamb)**2 / (4*sigma_0**2) + 1j*k_0*(x_i-lamb) - 1j * k_0**2 * t_j/2) /(1 + 1j*t_j/(2*sigma_0**2)))
+
+        return self.analytic_sol
     
-    def plot_Heatmap(self):
+    def plot_Heatmap(self, analytic: bool = False):
         """
         Plot the solution as a heatmap.
         """
         plt.rcParams.update({'font.family': 'Verdana'})
         fig, ax = plt.subplots(facecolor="#4d4c4c")
         try:
-            data = np.abs(self.solution)**2
+            if analytic:
+                data = np.abs(self.analytic_sol)**2
+            else:
+                data = np.abs(self.solution)**2
+
             data = np.flip(data, axis=0)
-        except NameError:
-            print("Call solve method before trying to plot!")
+        except AttributeError:
+            raise UserWarning("Call solve method before trying to plot!")
         
         norm = mpl.colors.Normalize(vmin=np.min(data), vmax=np.max(data))
         # norm = mpl.colors.Normalize(vmin=0, vmax=1)   
-        plt.imshow(data, cmap=cmr.ghostlight, aspect="auto", norm=norm,# vmin=np.min(data), vmax=np.max(data),
+        plt.imshow(data, cmap=cmr.ghostlight, aspect="auto", vmin=np.min(data), vmax=np.max(data),
                    extent=[self.x_range[0], self.x_range[1], self.t[0], self.t[-1]])
 
         x_ticks = np.linspace(self.x_range[0],self.x_range[1], 10)
@@ -196,11 +208,14 @@ class FDMSolver():
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
-        plt.suptitle("Heatmap of the solution solved by FDM - Gaussian Wavepacket", color="#dedede")
+        plt.suptitle("Heatmap of the Analytic solution - Gaussian Wavepacket", color="#dedede")
         
-        t_step = (self.t[-1] - self.t[0])/len(self.t)
+        if analytic:
+            t_step = self.t_data[0]/self.t_data[1]
+        else:
+            t_step = (self.t[-1] - self.t[0])/len(self.t)
 
-        plt.title(f"M = {len(self.t)}, N = {self.N}, t_step = {t_step:.2f}", color="#dedede")
+        plt.title(f"M = {len(self.t)}, N = {self.N}, t_step = {t_step:.2e}", color="#dedede")
 
         scalar_Mappable = plt.cm.ScalarMappable(norm=norm, cmap=cmr.ghostlight)
         cb = plt.colorbar(scalar_Mappable, ax=ax, label=r"|\psi(x,t)|^2$",
@@ -219,4 +234,5 @@ class FDMSolver():
         ax.tick_params(axis="x", colors="#dedede")
         ax.tick_params(axis="y", colors="#dedede")
         plt.subplots_adjust(right=.98)
+        plt.xlim(-0.5, 1.5)
         plt.show()

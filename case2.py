@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 from src2 import FDMSolver
 
 # Set some constants as far as this case goes
-N = 200
+N = 700
 x_range = (-0.5, 1.5)
+# x_range = (-1, 3.5)
 sigma_0 = 1/20
 k_0 = 50*np.pi
 lamb = 0.25
@@ -40,11 +41,21 @@ M = 11000
 t_points = np.linspace(0, T, M)
 
 solver = FDMSolver(initial_condition, no_potential, x_range, t_points, N)
-solution1 = solver.solve()
+# solution1 = solver.solve()
 
 # Plot the solution
-solver.plot_Animation(saveVideo=False, filename="case2b.mp4", fps=500)
-solver.plot_Heatmap()
+# solver.plot_Animation(saveVideo=True, filename="case2d.mp4", fps=500)
+t2 = np.linspace(0, 0.01, M)
+a = solver.solve_Analytic(solver.x, t2)
+
+for i in range(10):
+    plt.plot(solver.x, np.abs(a[100 * i])**2)
+plt.show()
+
+solver.plot_Heatmap(analytic=True)
+
+# NOTE REMOVE FOR FURTHER PLOTS
+quit()
 
 # Instantiate another solver with a different N
 solver2 = FDMSolver(initial_condition, no_potential, x_range, t_points, 700)
@@ -69,8 +80,8 @@ plt.grid(c="#d1d1d1", alpha=0.5)
 plt.show()
 
 # Plot the differemce between the two solutions and the analytic solution
-analytic1 = np.abs(solver.analytic_solution(np.mean(solver.x), solver.t))**2
-analytic2 = np.abs(solver2.analytic_solution(np.mean(solver2.x), solver2.t))**2
+analytic1 = np.abs(solver.solve_Analytic(np.mean(solver.x), solver.t))**2
+analytic2 = np.abs(solver2.solve_Analytic(np.mean(solver2.x), solver2.t))**2
 print(f"Shape of analytic1: {analytic1.shape}")
 print(f"Shape of analytic2: {analytic2.shape}")
 avg_sol1 = np.mean(np.abs(solution1)**2, axis=1)
