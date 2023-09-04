@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1693869450 "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" "main.pdf" "main" 1693869453 0
+["pdflatex"] 1693870041 "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" "main.pdf" "main" 1693870044 0
   "C:/Users/Marko Urbanc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1693869298 81068 299f700eb05b1217173e62b88b513bd0 ""
   "C:/Users/Marko Urbanc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1691572099 24122251 e939fd6a89cc5679b97085233755a785 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -115,7 +115,7 @@
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1673965817 123 a302f2c651a95033260db60e51527ae8 ""
-  "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" 1693869447 20676 ef4b12d9302debae15605f3934863d7b ""
+  "e:/FormerSSD/Backup/Documents/FMF/3. Letnik (Dodatno Leto)/Mafijski Praktikum cont/DN10/main.tex" 1693870040 20726 e13d8a3d2d78d41b8963ce73f178f839 ""
   "images/case1_N100.png" 1693862853 129099 a37198d6306c0da553e3e5b809fda4a6 ""
   "images/case1_N200.png" 1693862880 98942 e89cf313e1d34eaee2166cc559954375 ""
   "images/case1_N300.png" 1693862823 82553 eaeb53d13ac982447b0f98816ee4e30e ""
@@ -132,10 +132,10 @@
   "images/delta_case2.png" 1693834341 30074 69f1bd6a57cd902df7b029c1a03acdb5 ""
   "images/delta_numeric_analytic_N700.png" 1693835045 56735 5396d540e990aee58f98d091c3c4bb8b ""
   "logo.png" 1693580566 8303 8f7f5965ff153bbc45aecaef5ccdb0ac ""
-  "main.aux" 1693869453 6196 bcda7e4bf7e5592a54ca444ba38e142e "pdflatex"
-  "main.out" 1693869453 1455 f4d0ddab484f2424711034f134b19525 "pdflatex"
-  "main.tex" 1693869447 20676 ef4b12d9302debae15605f3934863d7b ""
-  "main.toc" 1693869453 840 2102fcb7dc6a81da84863c66181fe22d "pdflatex"
+  "main.aux" 1693870044 6196 bcda7e4bf7e5592a54ca444ba38e142e "pdflatex"
+  "main.out" 1693870044 1455 f4d0ddab484f2424711034f134b19525 "pdflatex"
+  "main.tex" 1693870040 20726 e13d8a3d2d78d41b8963ce73f178f839 ""
+  "main.toc" 1693870044 840 2102fcb7dc6a81da84863c66181fe22d "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  5 SEP 2023 01:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.8.9)  5 SEP 2023 01:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -617,7 +617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--260
  []
 
 [5 <./images/delta_N700_N200.png>]
-<./images/case1_org.png, id=116, 462.528pt x 346.896pt>
+<./images/case1_org.png, id=115, 462.528pt x 346.896pt>
 File: ./images/case1_org.png Graphic file (type png)
 <use ./images/case1_org.png>
 Package pdftex.def Info: ./images/case1_org.png  used on input line 265.
@@ -625,90 +625,89 @@ Package pdftex.def Info: ./images/case1_org.png  used on input line 265.
 <./images/case1_N100.png, id=117, 462.528pt x 346.896pt>
 File: ./images/case1_N100.png Graphic file (type png)
 <use ./images/case1_N100.png>
-Package pdftex.def Info: ./images/case1_N100.png  used on input line 274.
+Package pdftex.def Info: ./images/case1_N100.png  used on input line 275.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/case1_N200.png, id=119, 462.528pt x 346.896pt>
 File: ./images/case1_N200.png Graphic file (type png)
 <use ./images/case1_N200.png>
-Package pdftex.def Info: ./images/case1_N200.png  used on input line 286.
+Package pdftex.def Info: ./images/case1_N200.png  used on input line 287.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/case1_N300.png, id=121, 462.528pt x 346.896pt>
 File: ./images/case1_N300.png Graphic file (type png)
 <use ./images/case1_N300.png>
-Package pdftex.def Info: ./images/case1_N300.png  used on input line 296.
+Package pdftex.def Info: ./images/case1_N300.png  used on input line 297.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/case1_N700.png, id=123, 462.528pt x 346.896pt>
 File: ./images/case1_N700.png Graphic file (type png)
 <use ./images/case1_N700.png>
-Package pdftex.def Info: ./images/case1_N700.png  used on input line 306.
+Package pdftex.def Info: ./images/case1_N700.png  used on input line 307.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/case1_analytic.png, id=125, 462.528pt x 346.896pt>
 File: ./images/case1_analytic.png Graphic file (type png)
 <use ./images/case1_analytic.png>
-Package pdftex.def Info: ./images/case1_analytic.png  used on input line 316.
+Package pdftex.def Info: ./images/case1_analytic.png  used on input line 317.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/delta_numeric_analytic_N700.png, id=127, 462.528pt x 346.896pt>
 File: ./images/delta_numeric_analytic_N700.png Graphic file (type png)
 <use ./images/delta_numeric_analytic_N700.png>
-Package pdftex.def Info: ./images/delta_numeric_analytic_N700.png  used on input line 325.
+Package pdftex.def Info: ./images/delta_numeric_analytic_N700.png  used on input line 326.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--335
+Underfull \hbox (badness 10000) in paragraph at lines 331--336
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 337--343
+Underfull \hbox (badness 10000) in paragraph at lines 338--344
 
  []
 
 <./images/case2_N500_expanded.png, id=130, 462.528pt x 346.896pt>
 File: ./images/case2_N500_expanded.png Graphic file (type png)
 <use ./images/case2_N500_expanded.png>
-Package pdftex.def Info: ./images/case2_N500_expanded.png  used on input line 348.
+Package pdftex.def Info: ./images/case2_N500_expanded.png  used on input line 349.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 <./images/case2_analytic.png, id=131, 462.528pt x 346.896pt>
 File: ./images/case2_analytic.png Graphic file (type png)
 <use ./images/case2_analytic.png>
-Package pdftex.def Info: ./images/case2_analytic.png  used on input line 355.
+Package pdftex.def Info: ./images/case2_analytic.png  used on input line 356.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--374
+Underfull \hbox (badness 10000) in paragraph at lines 361--368
 
  []
 
 [6] [7 <./images/case1_org.png> <./images/case1_N100.png>] [8 <./images/case1_N200.png> <./images/case1_N300.png>] [9 <./images/case1_N700.png> <./images/case1_analytic.png>] [10 <./images/delta_numeric_analytic_N700.png> <./images/case2_N500_expanded.png>]
-<./images/case2_N100.png, id=170, 462.528pt x 346.896pt>
+Underfull \hbox (badness 10000) in paragraph at lines 369--375
+
+ []
+
+<./images/case2_N100.png, id=171, 462.528pt x 346.896pt>
 File: ./images/case2_N100.png Graphic file (type png)
 <use ./images/case2_N100.png>
-Package pdftex.def Info: ./images/case2_N100.png  used on input line 379.
+Package pdftex.def Info: ./images/case2_N100.png  used on input line 380.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<./images/case2_N200.png, id=173, 462.528pt x 346.896pt>
+<./images/case2_N200.png, id=174, 462.528pt x 346.896pt>
 File: ./images/case2_N200.png Graphic file (type png)
 <use ./images/case2_N200.png>
-Package pdftex.def Info: ./images/case2_N200.png  used on input line 390.
+Package pdftex.def Info: ./images/case2_N200.png  used on input line 391.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<./images/case2_N400.png, id=176, 462.528pt x 346.896pt>
+<./images/case2_N400.png, id=177, 462.528pt x 346.896pt>
 File: ./images/case2_N400.png Graphic file (type png)
 <use ./images/case2_N400.png>
-Package pdftex.def Info: ./images/case2_N400.png  used on input line 406.
+Package pdftex.def Info: ./images/case2_N400.png  used on input line 407.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<./images/case2_N700.png, id=177, 462.528pt x 346.896pt>
+<./images/case2_N700.png, id=178, 462.528pt x 346.896pt>
 File: ./images/case2_N700.png Graphic file (type png)
 <use ./images/case2_N700.png>
-Package pdftex.def Info: ./images/case2_N700.png  used on input line 415.
+Package pdftex.def Info: ./images/case2_N700.png  used on input line 416.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
-<./images/delta_case2.png, id=179, 462.528pt x 346.896pt>
+<./images/delta_case2.png, id=180, 462.528pt x 346.896pt>
 File: ./images/delta_case2.png Graphic file (type png)
 <use ./images/delta_case2.png>
-Package pdftex.def Info: ./images/delta_case2.png  used on input line 427.
+Package pdftex.def Info: ./images/delta_case2.png  used on input line 428.
 (pdftex.def)             Requested size: 345.0pt x 258.76335pt.
- [11] [12 <./images/case2_analytic.png> <./images/case2_N100.png>] [13 <./images/case2_N200.png> <./images/case2_N400.png>] [14 <./images/case2_N700.png> <./images/delta_case2.png>] (main.aux)
+[11] [12 <./images/case2_analytic.png> <./images/case2_N100.png>] [13 <./images/case2_N200.png> <./images/case2_N400.png>] [14 <./images/case2_N700.png> <./images/delta_case2.png>] (main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-30>
@@ -717,17 +716,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F4D0DDAB484F2424711034F134B19525;1455.
  ) 
 Here is how much of TeX's memory you used:
- 20519 strings out of 475550
- 397451 string characters out of 5759194
+ 20518 strings out of 475550
+ 397436 string characters out of 5759194
  1935238 words of memory out of 5000000
- 41451 multiletter control sequences out of 15000+600000
+ 41450 multiletter control sequences out of 15000+600000
  562093 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,10n,79p,368b,942s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Marko Urbanc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (15 pages, 1200948 bytes).
+Output written on main.pdf (15 pages, 1201345 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
+ 278 PDF objects out of 1000 (max. 8388607)
  54 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

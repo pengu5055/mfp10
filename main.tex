@@ -202,7 +202,7 @@ Tu vzamemo območje $x\in[-0.5, 1.5]$ in spremljamo dokler paket ne prečka $x\a
 Postavimo $\sigma_0=1/20$, $k_0=50\pi$ in $\lambda=0.25$.
 
 \section{Opis reševanja}
-Zdaj praktično delam "faks zaključek" speedrun, torej ta naloga žal ni tako podrobno rešena,
+Zdaj praktično delam ``faks zaključek'' speedrun, torej ta naloga žal ni tako podrobno rešena,
 kot bi mogoče želel. Uporabil sem standardni ansambel programskih paketov, ki sem jih uporabljal
 tudi pri prejšnji nalogi. Torej \texttt{numpy}, \texttt{scipy} in \texttt{matplotlib}. Pri tej nalogi
 žal nisem imel možnosti (zaradi omejenega časa), da bi delal kakšne divje eksperimente, torej je to praktično to
@@ -217,7 +217,7 @@ V glavnem je razred \texttt{FDMSolver} zelo podoben kot \texttt{SpectralSolver} 
 in cel point nalog pa je njegova metoda \texttt{solve()}. Tu se incializirajo še potrebne matrike in se začne iterativno
 reševanje sistema. Pravzaprav tu tokrat nisem naredil res čisto nič posebnega, samo običajno matrično množenje
 \texttt{numpy} \texttt{ndarray}-ov. Se mi zdi škoda, ker bi lahko preverjal svojo implementacijo proti kaki, ki jo 
-ima recimo \texttt{scipy} ali pa \texttt{numpy}. Recimo \texttt{scipy.sparse.linalg.bicgstab()} se mi. Ali pa v našem
+ima recimo \texttt{scipy} ali pa \texttt{numpy}. Recimo \texttt{scipy.sparse.linalg.bicgstab()} se mi zdi. Ali pa v našem
 primeru, ker imamo tridiagonalno matriko bi moral dobro delati \texttt{scipy.linalg.solve\_banded()}. 
 Anyways žal tega nisem imel časa narediti.\\
 
@@ -267,7 +267,8 @@ Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni 
     \label{fig:harmonic_oscillator_org}
 \end{figure}
 
-Vidimo, da se rešitev hitro razleti. Sedaj pa serija slik, z bolj fino časovno mrežo.
+Na Sliki \ref{fig:harmonic_oscillator_org} vidimo, da se rešitev hitro razleti. 
+Sedaj pa serija slik, z bolj fino časovno mrežo.
 
 \begin{figure}[p]
     \centering
@@ -318,7 +319,7 @@ Za primerjavo pa seveda še analitična rešitev na Sliki \ref{fig:harmonic_osci
     \label{fig:harmonic_oscillator_analytic}
 \end{figure}
 
-Lahko si na hitro pogledamo še odstopanje med analitično in numerično rešitvijo. Na Sliki \ref{fig:harmonic_oscillator_error}
+Lahko si na hitro pogledamo še odstopanje med analitično in numerično rešitvijo na Sliki \ref{fig:harmonic_oscillator_error}.
 
 \begin{figure}[p]
     \centering
