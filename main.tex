@@ -89,7 +89,7 @@ glasi
     \label{schrodinger}
 \end{equation}
 
-Predstavlja osnovno orodje za nerelativistični opis kvantnih sistemov. V enačbi \ref{schrodinger} je $H$ Hamiltonian
+Predstavlja osnovno orodje za nerelativistični opis kvantnih sistemov. V enačbi (\ref{schrodinger}) je $H$ Hamiltonian
 sistema, ki je v splošnem odvisen od časa. V našem primeru bomo obravnavali časovno neodvisen Hamiltonian
 
 \begin{equation}
@@ -124,7 +124,7 @@ diferenco
     \label{krajevni_odvod}
 \end{equation}
 
-Te približke vstavimo v razvoj stanja \ref{razvoj} in razpišemo Hamiltonov operator, da dobimo sistem enačb
+Te približke vstavimo v razvoj stanja (\ref{razvoj}) in razpišemo Hamiltonov operator, da dobimo sistem enačb
 
 \begin{multline}
     \psi_j^{m+1} - i \frac{\Delta t}{4\Delta x^2}\left[\psi_{j+1}^{m+1} - 2\psi_j^{m+1} + \psi_{j-1}^{m+1}\right] + i \frac{\Delta t}{2} V_j \psi_j^{m+1} = \\
@@ -133,7 +133,7 @@ Te približke vstavimo v razvoj stanja \ref{razvoj} in razpišemo Hamiltonov ope
 \end{multline}
 
 v notranjih točkah mreže, medtem ko na robu (pri $j\le 0$ in $j\ge N$) postavimo $\psi_j^{m} = 0$. Vrednosti valovne funkcije uredimo v 
-vektor $\Psi^m$ in sistem \ref{sistem} prepišemo v matrično obliko
+vektor $\Psi^m$ in sistem (\ref{sistem}) prepišemo v matrično obliko
 
 \begin{equation}
     \mathbf{A}\Psi^{m+1} = \mathbf{A^*}\Psi^m\>,
@@ -195,6 +195,10 @@ v praznem prostoru $V(x) = 0$. Analitična rešitev za to stanje je
     {\sqrt{1 + i t/(2\sigma_0^2)}}\right]}
     \label{analiticna_resitev2}
 \end{equation}
+
+Tu vzamemo območje $x\in[-0.5, 1.5]$ in spremljamo dokler paket ne prečka $x\approx 0.75$.
+Postavimo $\sigma_0=1/20$, $k_0=50\pi$ in $\lambda=0.25$.
+
 \section{Opis reševanja}
 Zdaj praktično delam "faks zaključek" speedrun, torej ta naloga žal ni tako podrobno rešena,
 kot bi mogoče želel. Uporabil sem standardni ansambel programskih paketov, ki sem jih uporabljal
@@ -217,7 +221,7 @@ Anyways žal tega nisem imel časa narediti.\\
 
 \section{Rezultati}
 \subsection{Prvi primer - harmonski oscilator}
-Za prvi primer sem uporabil začetno stanje \ref{zacetno_stanje1}. 
+Za prvi primer sem uporabil začetno stanje (\ref{zacetno_stanje1}).
 Začetno stanje sem diskretiziral na mrežo z $N=300$ točkami, vsaj prvotno. Izkazalo se je,
 da pri nastavitvah, ki so predlagane v nalogi, rešitev čez nekaj nihajev razpade. Nedopustno.
 Čas sem spremljal originalno na mreži z 
@@ -243,26 +247,177 @@ Ampak vizualno, ko človek gleda dobljene animacije zgledata res identično.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./images/delta_N700_N200.png}
-    \caption*{Razlika med rešitvama z $N=700$ in $N=200$}
+    \caption{Razlika med rešitvama z $N=700$ in $N=200$}
 \end{figure}
 
 Pa ja, razlika med rešitvama definitivno narašča z časom, kot je pričakovano, saj se rešitve še vedno kvarijo
 in sklepam, da se tista pri $N=200$ kvari hitreje, ampak bralec, poglej ta red velikosti razlike. \\
 
-Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni obrok je serviran! Na sliki
+Kakorkoli zdaj je dovolj o tem, da sem se igral z različnimi parametri. Glavni obrok je serviran! Na Sliki
 \ref{fig:harmonic_oscillator_org} je prikazana rešitev pri originalnih parametrih, torej $N=300$, $M=1100$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./images/case1_org.png}
-    \caption*{Rešitev pri originalnih parametrih.}
+    \caption{Rešitev pri originalnih parametrih.}
     \label{fig:harmonic_oscillator_org}
+\end{figure}
+
+Vidimo, da se rešitev hitro razleti. Sedaj pa serija slik, z bolj fino časovno mrežo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_N100.png}
+    \caption{Rešitev pri $N=100$,$M=11000$.}
+\end{figure}
+
+Tu vidimo, da kljub temu, da je časovna mreža zelo fino diskretizirana, se rešitev še vedno razleti.
+Zanimivo je, da se razleti na drugačen način kot pri originalnih parametrih. Vzorec je drugačen. Nisem 
+pa prepričan zakaj pride do tega. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_N200.png}
+    \caption{Rešitev pri $N=200$,$M=11000$.}
+\end{figure}
+
+To je naša spodnja meja za smiselen $N$. Rešitev se malo razleze, ampak pride 
+skozi 10 nihajev v relativno celem stanju, tako da se zdi zadostno.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_N300.png}
+    \caption{Rešitev pri $N=300$,$M=11000$.}
+\end{figure}
+
+Tu je rešitev pri originalnih parametrih, samo z bolj fino časovno mrežo. Rešitev tu
+je zelo lepa. Vedno manj je deformacij. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_N700.png}
+    \caption{Rešitev pri $N=700$,$M=11000$.}
+\end{figure}
+
+Načeloma imam tudi sliko še za $N=500$ ampak je že precej podobna tej, tako da sem jo izpustil.
+Tole je pa rešitev pri $N=700$. Pride skozi 10 nihajev brez, da bi bilo opaziti kake res hude deformacije.
+Za primerjavo pa seveda še analitična rešitev na Sliki \ref{fig:harmonic_oscillator_analytic}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case1_analytic.png}
+    \caption{Analitična rešitev.}
+    \label{fig:harmonic_oscillator_analytic}
+\end{figure}
+
+Lahko si na hitro pogledamo še odstopanje med analitično in numerično rešitvijo. Na Sliki \ref{fig:harmonic_oscillator_error}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/delta_numeric_analytic_N700.png}
+    \caption{Odstopanje med analitično in numerično rešitvijo.}
+    \label{fig:harmonic_oscillator_error}
+\end{figure}
+
+V tem primeru je bila risana rešitev z $N=700$, v primerjavi z analitično. Brez absolutne vrednosti
+čez, kar nam da nekakšen residum. V bistvu delam neke sorte odstopanje med krajevnimi povprečji rešitev. 
+V praktičnem smislu se ta vzorec vidi kot zaostajanja numerične rešitve za analitično, kjer jo potem na 
+robu potenciala za kratek čas prehiti in začne spet zaostajati. To se vidi fantastično na animaciji, ki jih
+naj bi bilo v repozitoriju oz. upam, da se bom spomnil pripeti tudi v mail. \\
+
+\subsection{Drugi primer - gaussov paket}
+Za drugi primer sem uporabil začetno stanje (\ref{zacetno_stanje2}).
+Začetno stanje sem diskretiziral z mrežo z $N=500$ točkami. Med pisanjem poročila za to nalogo
+sem ugotovil, da je bila podana zveza za $\Delta t$, ki sem jo jaz spregledal. Delajmo se, da je bilo to
+v resnici le priporočilo. Sklicujem se na creative freedom naloge. Podobno kot pri prvem primeru, sem tudi
+tu časovno mrežo razširil na $M=11000$ točk. Tu ni drugega razloga za točno to številko, kot to, da sem 
+elemente kopiral iz prvega primera. \\
+
+Rešitev, ki jo dobimo za $N=500$ je na Sliki \ref{fig:gaussian_org}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_N500_expanded.png}
+    \caption{Rešitev pri $N=500$, $M=11000$.}
+    \label{fig:gaussian_org}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_analytic.png}
+    \caption{Analitična rešitev.}
+    \label{fig:gaussian_analytic}
+\end{figure}
+
+V primerjavi z analitično rešitvijo na Sliki \ref{fig:gaussian_analytic} se zdi, da je rešitev
+še kar dogledna. Proti koncu je res že kar šibka, ampak to bi se dalo hitro popraviti z spremembo
+parametrov. To se sicer pokaže prvi znak neke napake v moji implementaciji. V nekem srednjem času
+je nisem uspel najti, torej je currently "ignored". Čeprav naj bi predstavljaja isto reč je 
+časovna skala pri analitični rešitvi čisto drugačna kot pri numerični. Najbolj verjetno je, da sem
+se kje zmotil pri prepisu enačb. In to je tudi razlog, da sem se odločil, da ne bom kazal grafa
+razlike med analitično in numerično rešitvijo, ker nima smisla. \\
+
+Čudnosti se ne končajo tu sicer. Pravzaprav, ravno zaradi lack of time, sem mogoče nekoliko goljufal
+z rešitvijo. Namreč moj razred \texttt{FDMSolver} v tem primeru deloval čudno na robovih krajevne mreže.
+To mislim v tem smislu, da se je valovni paket na robu odbil in potem začel interferirati sam s seboj.
+Tudi temu sem namenil debugging session, a nisem uspel najti vzroka. So pa grafi arguably 10x bolj
+kul in zanimivi kot če bi samo gledali valovni paket, v praznem prostoru. With that being said,
+se mi zdi, da je zdaj čas za še eno galerijo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_N100.png}
+    \caption{Rešitev pri $N=100$, $M=11000$.}
+\end{figure}
+
+V primeru rešitve za $N=100$ rešitev praktično nič ne naredi preden se ne raztopi in razpade. Not 
+very interesting. Ampak je pa zanimivo, da je spet $N=200$ spodnja meja za smiselno rešitev.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_N200.png}
+    \caption{Rešitev pri $N=200$, $M=11000$.}
+\end{figure}
+
+Tu se precej dobro vidi tudi ta čudnost, ki sem jo omenil. Valovni paket se odbije od roba in potem
+začne interferirati sam s seboj. To se še boljše vidi na tej sliki, ki jo imam. Embarraingly enough
+se ne spomnem več pogojev nastanka te slike, čeprav je nekaj parametrov zapisanih na njej. V splošnem
+naj bi prikazovala isti proces le pri $N=400$ in na daljši časovni skali (razen, da je zaradi nekega 
+razloga časovna skala tu manjša). ((Ima to veze z analitično rešitvijo? Me tepe ne poslušanje navodil?))
+V glavnem, se odbije in praktično izgine, ker je tako razlezen. Potem pa se začne pojavljati na drugi
+stran, kjer se spet tako kot prej odbije ipd.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_N400.png}
+    \caption{Unknown rešitev pri $N=400$, $M=11000$.}
+\end{figure}
+
+Meni so te interferenčne proge in vzorci res všeč. Tako da obvezno še $N=700$ in potem se ustavim. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/case2_N700.png}
+    \caption{Rešitev pri $N=700$, $M=11000$.}
+\end{figure}
+
+Tu se mi zdi, da se fenomenalno vidi vzorec. Vztrajal sem, da rabimo ta graf zato, da lahko kot pri 
+prvi nalogi narišemo še primerjalni plot med $N=700$ in $N=200$ rešitvijo. Spet se izkaže, da je razlika
+izredno majhna, čeprav je nekoliko večja kot pri prejšnji nalogi.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./images/delta_case2.png}
+    \caption{Razlika med rešitvama z $N=700$ in $N=200$}
 \end{figure}
 
 
 
 
+
 \section{Komentarji in izboljšave}
+Želim si, da bi imel čas se igrati z LaTeX-om, da bi lahko slike lepše vstavil v poročilo, but alas 
+it is what it is. 
 
 
 \newpage

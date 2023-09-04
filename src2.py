@@ -203,8 +203,11 @@ class FDMSolver():
 
         x_ticks = np.linspace(self.x_range[0],self.x_range[1], 10)
         plt.xticks(x_ticks)
-        y_ticks = np.linspace(self.t[0], self.t[-1], 10)
-        plt.yticks(y_ticks)
+        if analytic:
+            y_ticks = np.round(np.linspace(self.t_data[0], self.t_data[0]*self.t_data[1], 10), 4)
+        else:
+            y_ticks = np.linspace(self.t[0], self.t[-1], 10)
+        plt.yticks(np.linspace(self.t[0], self.t[-1], 10), labels=y_ticks)
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
