@@ -176,38 +176,40 @@ class FDMSolver():
         return np.sqrt(alpha/ np.sqrt(np.pi)) * np.exp(-0.5*(xi - xl*np.cos(omega*t))**2 -
                 -1j * (omega*t/2 + xi*xl*np.sin(omega*t) - 0.25 * xl**2 * np.sin(2*omega*t))) 
     
-    def plot_Heatmap(self, method: str = "analytical"):
+    def plot_Heatmap(self):
         """
         Plot the solution as a heatmap.
         """
         plt.rcParams.update({'font.family': 'Verdana'})
         fig, ax = plt.subplots(facecolor="#4d4c4c")
-        if method == "analytical":
-            data = np.copy(self.solution_a)
+        try:
+            data = np.abs(self.solution)**2
             data = np.flip(data, axis=0)
-        elif method == "numerical":
-            data = np.copy(self.solution)
-            data = np.flip(data, axis=0)
-        else:
-            raise ValueError("Method must be either 'analytical' or 'numerical'!")
+        except NameError:
+            print("Call solve method before trying to plot!")
+        
         norm = mpl.colors.Normalize(vmin=np.min(data), vmax=np.max(data))
         # norm = mpl.colors.Normalize(vmin=0, vmax=1)   
-        plt.imshow(data, cmap=cmr.redshift, aspect="auto", norm=norm,# vmin=np.min(data), vmax=np.max(data),
-                   extent=[self.x_range[0], self.x_range[1], self.t_points[0], self.t_points[-1]])
+        plt.imshow(data, cmap=cmr.ghostlight, aspect="auto", norm=norm,# vmin=np.min(data), vmax=np.max(data),
+                   extent=[self.x_range[0], self.x_range[1], self.t[0], self.t[-1]])
 
         x_ticks = np.linspace(self.x_range[0],self.x_range[1], 10)
         plt.xticks(x_ticks)
-        y_ticks = np.linspace(self.t_points[0], self.t_points[-1], 10)
+        y_ticks = np.linspace(self.t[0], self.t[-1], 10)
         plt.yticks(y_ticks)
 
         plt.xlabel(r"$x\>[arb. units]$")
         plt.ylabel(r"$t\>[arb. units]$")
         plt.suptitle("Heatmap of the solution solved by Analytical Spectral method", color="#dedede")
         
-        scalar_Mappable = plt.cm.ScalarMappable(norm=norm, cmap=cmr.redshift)
-        cb = plt.colorbar(scalar_Mappable, ax=ax, label=r"$T\>[arb. units]$",
+        t_step = (self.t[-1] - self.t[0])/len(self.t)
+
+        plt.title(f"M = {len(self.t)}, N = {self.N}, t_step = {t_step:.2f}", color="#dedede")
+
+        scalar_Mappable = plt.cm.ScalarMappable(norm=norm, cmap=cmr.ghostlight)
+        cb = plt.colorbar(scalar_Mappable, ax=ax, label=r"|\psi(x,t)|^2$",
                       orientation="vertical")
-        cb.set_label(r"$T\>[arb. units]$", color="#dedede")
+        cb.set_label(r"$|\psi(x,t)|^2$", color="#dedede")
         cb.ax.xaxis.set_tick_params(color="#dedede")
         cb.ax.yaxis.set_tick_params(color="#dedede")
         cb.ax.tick_params(axis="x", colors="#dedede")
