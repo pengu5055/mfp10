@@ -159,6 +159,27 @@ Torej je $\mathbf{A}$ oblike
 Kot smo napovedali, je to torej matrični sistem, ki ga moramo rešiti v vsakem časovnem koraku iterativno.
 
 \section{Naloga}
+Naloga je sestavljena iz dveh delov. V prvem delu naloga od nas zahteva, da spremljamo časovni razvoj 
+začetnega stanja
+
+\begin{equation}
+    \Psi(x,\>0) = \sqrt{\frac{\alpha}{\sqrt{\pi}}} e^{-\alpha^2(x-\lambda)^2/2}\>,
+    \label{zacetno_stanje1}
+\end{equation}
+
+v harmonskem porencialu $V(x) = 1/2\cdot k x^2$, kjer je $\alpha = k^{1/4}$ in $\omega = \sqrt{k}$.
+Analitična rešitev za to stanje je
+
+\begin{equation}
+    \psi(x,\>t) = \sqrt{\frac{\alpha}{\sqrt{\pi}}} \exp{\left[-\frac{1}{2}(\xi - 
+    \xi_\lambda \cos{\omega t})^2-
+    i\left(\frac{\omega t}{2} + \xi\xi_\lambda \sin{\omega t} - 
+    \frac{1}{4}\xi_\lambda^2\sin{2\omega t}\right)\right]}\>,
+    \label{analiticna_resitev1}
+\end{equation}
+
+kjer je $\xi=\alpha x$
+
 
 \section{Opis reševanja}
 
